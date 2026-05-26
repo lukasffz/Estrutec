@@ -1,19 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Archivo', sans-serif;
     background-color: #0F172A;
     color: #E0E0E0;
     display: flex;
 }
-
-/* ===== SIDEBAR ADMIN ===== */
+/*menu lateral adm*/
 .admin-sidebar {
     width: 260px;
     background-color: #1F2C45;
@@ -46,15 +43,13 @@ body {
     background-color: #2e4266;
     color: #4A90D9;
 }
-
-/* ===== CONTEÚDO PRINCIPAL ===== */
+/*conteudo main/principal*/
 .admin-main {
     flex: 1;
     padding: 2rem;
     overflow-x: auto;
 }
-
-/* ===== DASHBOARD CARDS ===== */
+/*cards da pagina de dashboard*/
 .dashboard-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -80,8 +75,7 @@ body {
     font-weight: 700;
     color: #4A90D9;
 }
-
-/* ===== FILTROS (ESTOQUE) ===== */
+/*filtros estoque*/
 .estoque-filtros {
     display: flex;
     align-items: center;
@@ -110,8 +104,7 @@ body {
     border-color: #4A6FA5;
     color: #E0E0E0;
 }
-
-/* ===== TABELA DE ESTOQUE / PEDIDOS / CLIENTES ===== */
+/*tabelas*/
 .table-container {
     width: 100%;
     overflow-x: auto;
@@ -143,8 +136,7 @@ tbody td {
     padding: 11px 14px;
     color: #D0D8E8;
 }
-
-/* ===== BOTÕES DE AÇÃO (+, -, lixeira) ===== */
+/*botoes de acao tabela*/
 .acoes {
     display: flex;
     gap: 8px;
@@ -178,7 +170,6 @@ tbody td {
     background-color: #1f293700;
     color: #fff;
 }
-
 .btn {
     display:inline-block; margin-top:1rem; 
     background: #dadada;
@@ -189,12 +180,10 @@ tbody td {
     padding-bottom:10px;padding-left:237px;
     padding-right:237px;  
 }
-
 .btn:hover{
     background-color: #bdbdbd;
 }
-
-/* ===== RODAPÉ DO ESTOQUE (TOTAIS) ===== */
+/*rodape da pagina de estoque (com os totais)*/
 .estoque-rodape {
     display: flex;
     gap: 40px;
@@ -222,8 +211,7 @@ tbody td {
 .rodape-alerta {
     color: #FBBF24;
 }
-
-/* ===== FORMULÁRIOS ADMIN (cadastros) ===== */
+/*formularios de cadastro e etc adm*/
 .form-admin {
     max-width: 600px;
     background-color: #1F2C45;
@@ -261,8 +249,7 @@ tbody td {
 .form-admin button:hover {
     background-color: #6aa9f0;
 }
-
-/* ===== RESPONSIVIDADE ADMIN ===== */
+/*responsividade*/
 @media (max-width: 768px) {
     body {
         flex-direction: column;
