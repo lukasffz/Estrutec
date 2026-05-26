@@ -5,7 +5,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Archivo', sans-serif;
     background-color: #0F172A;
@@ -15,12 +14,10 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
 main {
     flex: 1;
 }
-
-/* ===== HEADER PÚBLICO ===== */
+/*header geral*/
 .site-header {
     background-color: #1F2C45;
     padding: 1rem 2rem;
@@ -55,13 +52,11 @@ main {
 .nav-principal a:hover {
     color: #4A90D9;
 }
-
 h1, h2, h3 {
     font-weight: 600;
     margin-bottom: 1rem;
 }
-
-/* ===== HERO SECTION ===== */
+/*hero*/
 .hero-estrutec {
     position: relative;
     height: 90vh;
@@ -128,8 +123,7 @@ h1, h2, h3 {
     box-shadow: 0 0 25px #4A90D999;
     transform: translateY(-3px);
 }
-
-/* ===== CATEGORIAS (HOME) ===== */
+/*categorias*/
 .home-categorias {
     max-width: 1280px;
     margin: 3rem auto;
@@ -183,8 +177,7 @@ h1, h2, h3 {
 .home-main {
     flex: 1;
 }
-
-/* ===== PÁGINA DE PRODUTOS (grid e filtros) ===== */
+/*produtos*/
 .produtos-wrapper {
     min-height: 100vh;
     display: flex;
@@ -276,8 +269,7 @@ h1, h2, h3 {
 .btn-comprar:hover {
     background-color: #6aa9f0;
 }
-
-/* ===== LOGIN, CADASTRO, CONTATO ===== */
+/*boxes login, cadastro e contato*/
 .pagina-login {
     display: flex;
     flex-direction: column;
@@ -346,7 +338,7 @@ h1, h2, h3 {
     background-color: #6aa9f0;
 }
 .form-container {
-    max-width: 500px;
+    width: 450px;
     margin: 3rem auto;
     background-color: #1F2C45;
     padding: 2rem;
@@ -403,8 +395,7 @@ button[type="submit"]:hover {
     text-align: center;
     margin-top: 1rem;
 }
-
-/* ===== TABELAS GENÉRICAS (CARRINHO, etc) ===== */
+/*tabelas*/
 .table-container {
     overflow-x: auto;
     background-color: #1F2C45;
@@ -428,8 +419,7 @@ th {
 tbody tr:hover {
     background-color: #1a2a42;
 }
-
-/* ===== RODAPÉ ===== */
+/*footer*/
 .site-footer {
     background-color: #1F2C45;
     text-align: center;
@@ -439,8 +429,7 @@ tbody tr:hover {
     color: #A0B0C8;
     font-size: 0.9rem;
 }
-
-/* ===== RESPONSIVIDADE ===== */
+/*responsividade*/
 @media (max-width: 768px) {
     .site-header__inner {
         flex-direction: column;

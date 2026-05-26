@@ -31,15 +31,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <div class="form-container">
-        <h2>Login</h2>
-        <form method="POST">
-            <div class="form-group"><label>E-mail</label><input type="email" name="email" required></div>
-            <div class="form-group"><label>Senha</label><input type="password" name="senha" required></div>
-            <button type="submit">Entrar</button>
-            <?php if (isset($erro)) echo "<p class='erro'>$erro</p>"; ?>
-        </form>
-        <p style="text-align:center; margin-top:1rem;">Não tem conta? <a href="cadastro.php" style="color:#16B2D4;">Criar Conta</a></p>
-    </div>
+    <?php include './partials/header.php'; ?>
+    <main class="sectionLogin">
+        <div class="form-container">
+            <h2>Login</h2>
+            <form method="POST">
+                <div class="form-group"><label>E-mail</label><input type="email" name="email" required></div>
+                <div class="form-group"><label>Senha</label><input type="password" name="senha" required></div>
+                <button type="submit">Entrar</button>
+                <?php if (isset($erro)) echo "<p class='erro'>$erro</p>"; ?>
+            </form>
+            <p style="text-align:center; margin-top:1rem;">Não tem conta? <a href="cadastro.php" style="color:#16B2D4;">Criar Conta</a></p>
+        </div>
+    </main>
+    <?php include './partials/footer.php'; ?>
 </body>
 </html>

@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+    <?php include './partials/header.php'; ?>
     <div class="form-container">
         <h2>Cadastro de Usuário</h2>
         <form method="POST">
@@ -40,5 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php if (isset($erro)) echo "<p class='erro'>$erro</p>"; ?>
         </form>
     </div>
+        <?php include './partials/footer.php'; ?>
 </body>
 </html>
