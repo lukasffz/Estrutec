@@ -27,7 +27,7 @@ main {
     z-index: 100;
 }
 .site-header__inner {
-    max-width: 1280px;
+    max-width: 1500px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -35,13 +35,85 @@ main {
     flex-wrap: wrap;
 }
 .logo img {
-    height: 50px;
+    height: 60px;
     width: auto;
 }
 .nav-principal ul {
     display: flex;
     gap: 2rem;
     list-style: none;
+}
+.TextoSobre {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background-color: #020b24;
+}
+
+.TextoSobre .imagem {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+}
+
+.TextoSobre .imagem img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+.TextoSobre .overlaySobre {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+
+  background: linear-gradient(
+    100deg,
+    rgba(1, 8, 30, 0.98) 0%,
+    rgba(1, 8, 30, 0.95) 32%,
+    rgba(1, 8, 30, 0.82) 45%,
+    rgba(1, 8, 30, 0.45) 58%,
+    transparent 72%
+  );
+
+  z-index: 2;
+}
+
+/* texto */
+.TextoSobre .conteudoSobre {
+  position: relative;
+
+  max-width: 650px;
+
+  padding-left: 90px;
+
+  color: #fff;
+
+  z-index: 3;
+}
+
+.TextoSobre .conteudoSobre h1 {
+  font-size: 55px;
+  margin-bottom: 35px;
+}
+
+.TextoSobre .conteudoSobre p {
+  font-size: 20px;
+  line-height: 1.8;
 }
 .nav-principal a {
     color: #E0E0E0;
@@ -184,7 +256,7 @@ h1, h2, h3 {
     flex-direction: column;
 }
 .produtos-main {
-    max-width: 1280px;
+    max-width: 1500px;
     margin: 2rem auto;
     padding: 0 2rem;
     width: 100%;

@@ -43,6 +43,28 @@ $categorias = readAll($pdo, 'produtos', '1 GROUP BY categoria ORDER BY categoria
                 <?php endforeach; ?>
             </div>
         </div>
+
+    <br>
+        <section class="TextoSobre">
+            <div class="imagem">
+                <img src="imagens/empresaSobre.png" alt="">
+            </div>
+    <div class = "overlaySobre">
+
+        <div class="conteudoSobre">
+            <h1>Sobre a Estrutec</h1>
+            <p>
+                A Estrutec é especializada no fornecimento de materiais para estrutura e fundação, atuando com foco exclusivo nas etapas mais críticas da construção civil. 
+                Seu trabalho é orientado por critérios de desempenho estrutural, conformidade técnica e confiabilidade operacional, garantindo segurança e durabilidade nas obras.
+            </p>
+            <br>
+            <p>
+                A empresa atende às fases de fundações, estruturas de concreto armado, 
+                sistemas pré-moldados e infraestrutura estrutural, mantendo seu posicionamento voltado exclusivamente à base das edificações, sem atuação em materiais de acabamento.
+            </p>
+        </div>
+    </div>
+        </section>  
     </main>
     <?php include 'partials/footer.php'; ?>
 </div>
