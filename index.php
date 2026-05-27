@@ -29,7 +29,9 @@ $categorias = readAll($pdo, 'produtos', '1 GROUP BY categoria ORDER BY categoria
         <!-- Cards de categorias -->
         <div class="home-categorias">
             <h2 class="home-titulo">Categorias de Produtos</h2>
+            <br>
             <p class="home-subtitulo">Escolha uma categoria e encontre os melhores materiais para sua obra</p>
+            <br>
             <div class="home-grid">
                 <?php foreach ($categorias as $cat): ?>
                     <?php 
@@ -65,6 +67,19 @@ $categorias = readAll($pdo, 'produtos', '1 GROUP BY categoria ORDER BY categoria
         </div>
     </div>
         </section>  
+        <section>
+            <div class="form-container">
+        <h2>Tire suas Dúvidas</h2>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="003094ff-69d0-4e8e-8a3d-219a585f9938">
+            <div class="form-group"><label>Nome Completo*</label><input type="text" name="nome" required></div>
+            <div class="form-group"><label>E-mail*</label><input type="email" name="email" required></div>
+            <div class="form-group"><label>Telefone*</label><input type="text" name="telefone" required></div>
+            <div class="form-group"><label>Mensagem*</label><textarea name="mensagem" rows="4" required></textarea></div>
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+    </div>
+            </section>
     </main>
     <?php include 'partials/footer.php'; ?>
 </div>
