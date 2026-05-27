@@ -47,7 +47,7 @@ $todasCategorias = readAll($pdo, 'produtos', '1 GROUP BY categoria ORDER BY cate
             <div class="produtos-grid">
                 <?php foreach ($produtos as $p): ?>
                     <div class="produto-card">
-                        <img src="imagens/<?php echo htmlspecialchars($p['imagem'] ?: 'produto-padrao.jpg'); ?>" alt="<?php echo htmlspecialchars($p['item']); ?>">
+                        <img src="<?php echo htmlspecialchars($p['imagem'] ?: 'produto-padrao.jpg'); ?>" alt="<?php echo htmlspecialchars($p['item']); ?>">
                         <h3><?php echo htmlspecialchars($p['item']); ?></h3>
                         <p><?php echo htmlspecialchars($p['descricao']); ?></p>
                         <span class="preco">R$ <?php echo number_format($p['preco'], 2, ',', '.'); ?></span>
