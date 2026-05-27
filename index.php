@@ -66,7 +66,7 @@ $categorias = readAll($pdo, 'produtos', '1 GROUP BY categoria ORDER BY categoria
         </section>  
         <section>
             <div class="form-container">
-        <h2>Tire suas Dúvidas</h2>
+        <h2>Tire Dúvidas</h2>
         <form action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="003094ff-69d0-4e8e-8a3d-219a585f9938">
             <div class="form-group"><label>Nome Completo*</label><input type="text" name="nome" required></div>
