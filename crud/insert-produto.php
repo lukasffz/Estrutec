@@ -7,7 +7,7 @@ $imagem = '';
 if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
     $ext = pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
     $nomeImg = uniqid() . '.' . $ext;
-    move_uploaded_file($_FILES['imagem']['tmp_name'], '../imagens/' . $nomeImg);
+    move_uploaded_file($_FILES['imagem']['tmp_name'], '../imagens_projeto/' . $nomeImg);
     $imagem = $nomeImg;
 }
 

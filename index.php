@@ -25,7 +25,6 @@ $categorias = readAll($pdo, 'produtos', '1 GROUP BY categoria ORDER BY categoria
                 <a href="produtos.php" class="hero-button">COMPRE JÁ</a>
             </div>
         </section>
-
         <!-- Cards de categorias -->
         <div class="home-categorias">
             <h2 class="home-titulo">Categorias de Produtos</h2>
@@ -45,27 +44,25 @@ $categorias = readAll($pdo, 'produtos', '1 GROUP BY categoria ORDER BY categoria
                 <?php endforeach; ?>
             </div>
         </div>
-
     <br>
         <section class="TextoSobre">
             <div class="imagem">
-                <img src="imagens/empresaSobre.png" alt="">
+                <img src="imagens/empresaSobre.png" alt="Background sobre a estrutec">
             </div>
-    <div class = "overlaySobre">
-
-        <div class="conteudoSobre">
-            <h1>Sobre a Estrutec</h1>
-            <p>
-                A Estrutec é especializada no fornecimento de materiais para estrutura e fundação, atuando com foco exclusivo nas etapas mais críticas da construção civil. 
-                Seu trabalho é orientado por critérios de desempenho estrutural, conformidade técnica e confiabilidade operacional, garantindo segurança e durabilidade nas obras.
-            </p>
-            <br>
-            <p>
-                A empresa atende às fases de fundações, estruturas de concreto armado, 
-                sistemas pré-moldados e infraestrutura estrutural, mantendo seu posicionamento voltado exclusivamente à base das edificações, sem atuação em materiais de acabamento.
-            </p>
-        </div>
-    </div>
+            <div class = "overlaySobre">
+                <div class="conteudoSobre">
+                    <h1>Sobre a Estrutec</h1>
+                    <p>
+                        A Estrutec é especializada no fornecimento de materiais para estrutura e fundação, atuando com foco exclusivo nas etapas mais críticas da construção civil. 
+                        Seu trabalho é orientado por critérios de desempenho estrutural, conformidade técnica e confiabilidade operacional, garantindo segurança e durabilidade nas obras.
+                    </p>
+                    <br>
+                    <p>
+                        A empresa atende às fases de fundações, estruturas de concreto armado, 
+                        sistemas pré-moldados e infraestrutura estrutural, mantendo seu posicionamento voltado exclusivamente à base das edificações, sem atuação em materiais de acabamento.
+                    </p>
+                </div>
+            </div>
         </section>  
         <section>
             <div class="form-container">

@@ -43,74 +43,19 @@ main {
     gap: 2rem;
     list-style: none;
 }
-.TextoSobre {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-
-  display: flex;
-  align-items: center;
-
-  overflow: hidden;
-
-  background-color: #020b24;
-}
-
-.TextoSobre .imagem {
-  position: absolute;
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  z-index: 1;
-}
-
-.TextoSobre .imagem img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-}
-
-
-.TextoSobre .overlaySobre {
-  position: absolute;
-  inset: 0;
-
-  display: flex;
-  align-items: center;
-
-  background: linear-gradient(
-    100deg,
-    rgba(1, 8, 30, 0.98) 0%,
-    rgba(1, 8, 30, 0.95) 32%,
-    rgba(1, 8, 30, 0.82) 45%,
-    rgba(1, 8, 30, 0.45) 58%,
-    transparent 72%
-  );
-
-  z-index: 2;
-}
 
 /* texto */
 .TextoSobre .conteudoSobre {
   position: relative;
-
   max-width: 650px;
-
   padding-left: 90px;
-
   color: #fff;
-
   z-index: 3;
 }
-
 .TextoSobre .conteudoSobre h1 {
   font-size: 55px;
   margin-bottom: 35px;
 }
-
 .TextoSobre .conteudoSobre p {
   font-size: 20px;
   line-height: 1.8;
@@ -248,6 +193,43 @@ h1, h2, h3 {
 }
 .home-main {
     flex: 1;
+}
+/*Sobre*/
+.TextoSobre {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #020b24;
+}
+.TextoSobre .imagem {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.TextoSobre .imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.TextoSobre .overlaySobre {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    100deg,
+    #01081efa 0%,
+    #01081ef2 32%,
+    #01081ed1 45%,
+    #01081e73 58%,
+    transparent 72%
+  );
+  z-index: 2;
 }
 /*produtos*/
 .produtos-wrapper {
