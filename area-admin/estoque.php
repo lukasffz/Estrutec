@@ -130,13 +130,12 @@ if (isset($_GET['edit_id'])) {
 
                     <button type="submit" name="acao" value="remove" class="btn-acao btn-remove">-</button>
 
-                    <button type="submit" name="lixeira" class="btn-acao btn-lixeira">Excluir</button>
+                    <button type="submit" name="lixeira" class="btn-acao btn-lixeira"><img src="../imagens/delete.png" width="22px"></button>
                 </form>
 
-                <a href="estoque.php?edit_id=<?= $produto['id'] . ($categoriaFiltro ? "&categoria=$categoriaFiltro" : '') ?>"
-                   class="btn-acao"
-                   style="text-decoration:none; background:#1f293700; padding:0.2rem 0.6rem; border-radius:20px;">
-                   Editar
+                <a href="estoque.php?edit_id=<?= $produto['id'] ... ?>" 
+                class="btn-acao" 
+                style="background-color: #1e3a8a;"> <img src="../imagens/edit.png" width="18px">
                 </a>
             </td>
         </tr>
