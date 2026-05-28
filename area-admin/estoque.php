@@ -6,7 +6,7 @@ $categoriaFiltro = $_GET['categoria'] ?? '';
 $where = $categoriaFiltro ? "categoria = '$categoriaFiltro'" : null;
 $produtos = readAll($pdo, 'produtos', $where);
 
-// Processar ações de + / - / lixeira (POST)
+// Processar ações de + / - / lixeira / editar (POST)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = (int)$_POST['id'];
     $acao = $_POST['acao'] ?? '';
@@ -18,6 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             update($pdo, 'produtos', ['quantidade' => $produto['quantidade'] - 1], "id = $id");
         } elseif (isset($_POST['lixeira'])) {
             delete($pdo, 'produtos', "id = $id");
+        } elseif ($acao === 'edit') {
+            // Redireciona injetando o edit_id na URL para ativar o formulário de edição abaixo
+            header("Location: estoque.php?edit_id=$id" . ($categoriaFiltro ? "&categoria=$categoriaFiltro" : ""));
+            exit;
         }
     }
     header("Location: estoque.php" . ($categoriaFiltro ? "?categoria=$categoriaFiltro" : ""));
@@ -54,7 +58,6 @@ if (isset($_GET['edit_id'])) {
         <?php endif; ?>
     </div>
 
-    <!-- FORMULÁRIO DE EDIÇÃO -->
     <?php if ($editProduto): ?>
     <div class="form-admin" style="margin-bottom: 2rem;">
         <h3>Editar Produto: <?= htmlspecialchars($editProduto['item']) ?></h3>
@@ -88,9 +91,7 @@ if (isset($_GET['edit_id'])) {
     </div>
     <?php endif; ?>
 
-    <!-- TABELA DE PRODUTOS -->
-    <!-- TABELA DE PRODUTOS -->
-<?php if (!$editProduto): ?>
+    <?php if (!$editProduto): ?>
 <div class="table-container">
     <table>
         <thead>
@@ -130,13 +131,10 @@ if (isset($_GET['edit_id'])) {
 
                     <button type="submit" name="acao" value="remove" class="btn-acao btn-remove">-</button>
 
-                    <button type="submit" name="lixeira" class="btn-acao btn-lixeira"><img src="../imagens/delete.png" width="22px"></button>
-                </form>
+                    <button type="submit" name="lixeira" class="btn-acao btn-lixeira"><img src="../imagens/delete.png" width="19px"></button>
 
-                <a href="estoque.php?edit_id=<?= $produto['id'] ... ?>" 
-                class="btn-acao" 
-                style="background-color: #1e3a8a;"> <img src="../imagens/edit.png" width="18px">
-                </a>
+                    <button type="submit" name="acao" value="edit" class="btn-acao btn-editar"><img src="../imagens/edit.png" width="19px"></button>
+                </form>
             </td>
         </tr>
         <?php endforeach; ?>

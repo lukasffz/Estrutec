@@ -154,6 +154,7 @@ tbody td {
     align-items: center;
     justify-content: center;
     transition: opacity 0.2s;
+    color: white;
 }
 .btn-acao:hover {
     opacity: 0.85;
@@ -167,10 +168,13 @@ tbody td {
     color: #fff;
 }
 .btn-lixeira {
-    background-color: #661023;
-    color: #fff;
+    background-color: #66102300;
+    filter: invert();
 }
-
+.btn-editar{ 
+    background-color:#e6541b00;
+    filter: invert();
+}
 .btn {
     display:inline-block; margin-top:1rem; 
     background: #dadada;
