@@ -45,7 +45,7 @@ $categorias = readAll($pdo, 'produtos', '1 GROUP BY categoria ORDER BY categoria
             </div>
         </div>
     <br>
-        <section class="TextoSobre">
+        <section class="TextoSobre" id="sobre">
             <div class="imagem">
                 <img src="imagens/empresaSobre.png" alt="Background sobre a estrutec">
             </div>

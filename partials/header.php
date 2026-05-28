@@ -7,7 +7,7 @@
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="produtos.php">Produtos</a></li>
-                <li><a href="sobre.php">Sobre</a></li>
+                <li><a href="index.php#sobre">Sobre</a></li>
                 <li><a href="contato.php">Contato</a></li>
                 <?php if (isset($_SESSION['id_login'])): ?>
                     <li><a href="carrinho.php">Carrinho</a></li>
