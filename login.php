@@ -9,8 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $usuario = read($pdo, 'cadastrados', "email = '$email'");
     if ($usuario && password_verify($senha, $usuario['senha'])) {
         $_SESSION['id_login'] = $usuario['id_login'];
-        $_SESSION['nome'] = $usuario['nome'];
-        $_SESSION['papel'] = $usuario['papel'];
+        $_SESSION['nome']     = $usuario['nome'];
+        $_SESSION['papel']    = $usuario['papel'];
+
+        // Marca o usuário como online
+        update($pdo, 'cadastrados', ['online' => 1], "id_login = {$usuario['id_login']}");
 
         if ($usuario['papel'] === 'cliente') {
             header('Location: index.php');
