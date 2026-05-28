@@ -111,6 +111,108 @@ body {
     background-color: #1F2C45;
     border-radius: 12px;
 }
+/* select customizado */
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.select-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #4A90D9;
+    pointer-events: none;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    padding: 8px 36px 8px 12px;
+    background-color: #1B2B44;
+    border: 1px solid #2e4266;
+    border-radius: 8px;
+    color: #D0D8E8;
+    font-family: 'Archivo', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+select:hover {
+    border-color: #4A6FA5;
+}
+select:focus {
+    border-color: #4A90D9;
+    box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.2);
+}
+select option {
+    background-color: #1B2B44;
+    color: #D0D8E8;
+}
+.btn-atualizar{
+    width: auto;
+    padding: 8px 15px 8px 12px;
+    background-color: #1B2B44;
+    border: 1px solid #2e4266;
+    border-radius: 8px;
+    color: #D0D8E8;
+    font-family: 'Archivo', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.btn-atualizar:hover{
+     border-color: #4A6FA5;
+}
+.btn-atualizar:focus{
+    border-color: #4A90D9;
+    box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.2);
+}
+/* input de arquivo customizado */
+.file-upload-input {
+    display: none;
+}
+.file-upload-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 1.5rem;
+    border: 1.5px dashed #2e4266;
+    border-radius: 8px;
+    background-color: #28395A;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+.file-upload-area:hover {
+    border-color: #4A90D9;
+    background-color: #1B2B44;
+}
+.file-upload-icon {
+    font-size: 2rem;
+    color: #4A90D9;
+    line-height: 1;
+}
+.file-upload-text {
+    font-size: 13px;
+    color: #D0D8E8;
+}
+.file-upload-hint {
+    font-size: 11px;
+    color: #4A5E80;
+}
 table {
     width: 100%;
     border-collapse: collapse;

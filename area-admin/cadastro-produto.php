@@ -27,7 +27,12 @@
             <label>Descrição</label>
             <textarea name="descricao" rows="3"></textarea>
             <label>Imagem do produto</label>
-            <input type="file" name="imagem" accept="image/*">
+            <label for="imagem-input" class="file-upload-area">
+                <span class="file-upload-icon">&#8679;</span>
+                <span class="file-upload-text">Clique para selecionar uma imagem</span>
+                <span class="file-upload-hint">PNG, JPG</span>
+            </label>
+            <input type="file" name="imagem" accept="image/png, image/jpg, image/jpeg" id="imagem-input" class="file-upload-input">
             <button type="submit">Cadastrar</button>
         </form>
     </div>
