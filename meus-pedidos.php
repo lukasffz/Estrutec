@@ -1,6 +1,7 @@
 <?php
-require_once 'config/crud.php';
 session_start();
+require_once 'config/crud.php';
+
  
 if (!isset($_SESSION['id_login']) || $_SESSION['papel'] !== 'cliente') {
     header('Location: login.php');
@@ -18,133 +19,7 @@ $pedidos = readAll($pdo, 'pedidos', "id_login = $id ORDER BY data_pedido DESC");
     <title>Meus Pedidos - Estrutec</title>
     <link rel="stylesheet" href="styles/style.css">
     <style>
-        .pedidos-wrapper {
-            max-width: 900px;
-            margin: 2.5rem auto;
-            padding: 0 2rem;
-        }
- 
-        .pedidos-titulo {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            border-left: 5px solid #4A90D9;
-            padding-left: 1rem;
-        }
- 
-        /* Card de cada pedido */
-        .pedido-card {
-            background: #1F2C45;
-            border-radius: 16px;
-            border: 1px solid #2e4266;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-            transition: border-color 0.2s;
-        }
- 
-        .pedido-card:hover {
-            border-color: #4A90D9;
-        }
- 
-        /* Cabeçalho do card */
-        .pedido-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.5rem;
-            background: #1B2B44;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
- 
-        .pedido-header-left {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
- 
-        .pedido-id {
-            font-weight: 700;
-            color: #4A90D9;
-            font-size: 1rem;
-        }
- 
-        .pedido-data {
-            font-size: 0.85rem;
-            color: #A0B0C8;
-        }
- 
-        /* Badge de status */
-        .badge-status {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.78rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
- 
-        .badge-pendente    { background: rgba(255, 193, 7,  0.15); color: #FFC107; border: 1px solid rgba(255,193,7,0.3); }
-        .badge-processando { background: rgba(74, 144, 217, 0.15); color: #4A90D9; border: 1px solid rgba(74,144,217,0.3); }
-        .badge-enviado     { background: rgba(22, 178, 212, 0.15); color: #16B2D4; border: 1px solid rgba(22,178,212,0.3); }
-        .badge-entregue    { background: rgba(40, 200, 100, 0.15); color: #28C864; border: 1px solid rgba(40,200,100,0.3); }
-        .badge-cancelado   { background: rgba(220,  60,  60, 0.15); color: #DC3C3C; border: 1px solid rgba(220,60,60,0.3); }
- 
-        .pedido-total {
-            font-weight: 700;
-            color: #E0E0E0;
-            font-size: 1rem;
-            white-space: nowrap;
-        }
- 
-        /* Lista de itens */
-        .pedido-itens {
-            padding: 1rem 1.5rem;
-        }
- 
-        .pedido-itens table {
-            width: 100%;
-            border-collapse: collapse;
-        }
- 
-        .pedido-itens th {
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #A0B0C8;
-            padding: 6px 8px;
-            border-bottom: 1px solid #2e4266;
-            text-align: left;
-            background: transparent;
-        }
- 
-        .pedido-itens td {
-            padding: 10px 8px;
-            border-bottom: 1px solid #1B2B44;
-            color: #C0CDE0;
-            font-size: 0.9rem;
-        }
- 
-        .pedido-itens tbody tr:last-child td {
-            border-bottom: none;
-        }
- 
-        .pedido-itens tbody tr:hover {
-            background: rgba(255,255,255,0.03);
-        }
- 
-        /* Estado vazio */
-        .pedidos-vazios {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: #A0B0C8;
-        }
- 
-        .pedidos-vazios p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
+       
     </style>
 </head>
 <body>
