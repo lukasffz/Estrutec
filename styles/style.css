@@ -507,7 +507,6 @@ h3 {
     outline: none;
     border-color: #4A90D9;
 }
-
 button[type="submit"],
 .btn {
     background-color: #4A90D9;
@@ -521,7 +520,33 @@ button[type="submit"],
     width: 100%;
     transition: background 0.2s;
 }
+.btn-acao {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+    color: white;
+    text-decoration: none;
 
+}
+.btn-acao:hover {
+    opacity: 0.85;
+}
+
+.btn-lixeira {
+    background-color: #66102300;
+    filter: invert();
+}
+.btn-lixeira:hover{
+   opacity: 0.85;
+}
 button[type="submit"]:hover {
     background-color: #6aa9f0;
 }
