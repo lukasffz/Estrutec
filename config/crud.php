@@ -4,8 +4,8 @@
 $host = 'localhost';
 $port = 3306;
 $dbname = 'estrutec';
-$username = 'root';
-$password = '';
+$username = 'dev';
+$password = '123';
 
 try {
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
