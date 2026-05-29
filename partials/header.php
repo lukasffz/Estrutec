@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <header class="site-header">
     <div class="site-header__inner">
         <a href="index.php" class="logo">

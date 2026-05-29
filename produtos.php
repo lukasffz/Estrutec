@@ -1,5 +1,6 @@
 <?php
 require_once 'config/crud.php';
+session_start(); 
 
 $categoriaSelecionada = $_GET['categoria'] ?? '';
 $where = $categoriaSelecionada ? "categoria = '$categoriaSelecionada'" : null;
