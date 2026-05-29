@@ -13,7 +13,7 @@ $pendentes = count(readAll($pdo, 'pedidos', "status = 'Pendente'"));
 if ($papel_usuario === 'gerente') {
     $faturamento = readAll($pdo, 'pedidos', "status = 'Concluído'");
     $totalFat = array_sum(array_column($faturamento, 'total'));
-    $clientes = count(readAll($pdo, 'cadastrados', "papel = 'cliente' AND ativo = 'ativo'"));
+    $clientes = count(readAll($pdo, 'cadastrados', "papel = 'cliente' AND ativo = 1"));
 }
 ?>
 <!DOCTYPE html>
