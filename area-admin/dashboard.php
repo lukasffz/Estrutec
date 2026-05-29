@@ -6,7 +6,7 @@ include '../config/auth.php';
 $papel_usuario = $_SESSION['papel'];
 
 // Dados que AMBOS (Funcionário e Gerente) podem ver
-$criticos = count(readAll($pdo, 'produtos', "quantidade < 10"));
+$criticos = count(readAll($pdo, 'produtos', "quantidade < 30"));
 $pendentes = count(readAll($pdo, 'pedidos', "status = 'Pendente'"));
 
 // Dados exclusivos do GERENTE (só puxa do banco se for gerente)

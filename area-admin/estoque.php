@@ -83,7 +83,7 @@ if (isset($_GET['edit_id'])) {
             <input type="text" name="preco" value="<?= number_format($editProduto['preco'], 2, ',', '') ?>" required>
 
             <label>Quantidade em estoque</label>
-            <input type="number" name="quantidade" value="<?= $editProduto['quantidade'] ?>" required>
+            <input type="number" name="quantidade" value="<?= $editProduto['quantidade'] ?>" min="0" required>
 
             <button type="submit">Salvar alterações</button>
             <a href="estoque.php<?= $categoriaFiltro ? "?categoria=$categoriaFiltro" : '' ?>" class="btn" >Cancelar</a>
