@@ -82,6 +82,19 @@ if (!empty($_SESSION['carrinho'])) {
     <title>Carrinho - Estrutec</title>
     <link rel="stylesheet" href="styles/style.css">
 
+    <!-- ADICIONA AQUI -->
+    <script>
+        function confirmarPedido(total) {
+            return confirm(
+                'Confirmar pedido?\n\n' +
+                'Total: R$ ' + total + '\n\n' +
+                'Clique em OK para finalizar.'
+            );
+        }
+    </script>
+
+</head>
+
 </head>
 <body>
 <?php include 'partials/header.php'; ?>
@@ -158,7 +171,11 @@ if (!empty($_SESSION['carrinho'])) {
                     </div>
  
                     <!-- Finalizar: link direto para o script PHP -->
-                    <a href="crud/finalizar-pedido.php" class="btn-finalizar">Finalizar Pedido</a>
+                    <a href="crud/finalizar-pedido.php" 
+                        class="btn-finalizar"
+                        onclick="return confirmarPedido('<?= number_format($totalGeral, 2, ',', '.') ?>')">
+                        Finalizar Pedido
+                    </a>
                     <a href="produtos.php" class="btn-continuar">← Continuar comprando</a>
                 </div>
  
