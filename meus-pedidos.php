@@ -10,6 +10,20 @@ if (!isset($_SESSION['id_login']) || $_SESSION['papel'] !== 'cliente') {
  
 $id = $_SESSION['id_login'];
 $pedidos = readAll($pdo, 'pedidos', "id_login = $id ORDER BY data_pedido DESC");
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $id_pedido = (int)$_POST['id_pedido'];
+    $acao = $_POST['acao'] ?? '';
+    $pedido = read($pdo, 'pedidos', "id_pedido = $id_pedido");
+    if ($pedido) {
+        if (isset($_POST['lixeira'])) {
+            delete($pdo, 'pedidos', "id_pedido = $id_pedido");
+        }
+    }
+    header("Location: meus-pedidos.php");
+    exit;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -51,6 +65,12 @@ $pedidos = readAll($pdo, 'pedidos', "id_login = $id ORDER BY data_pedido DESC");
                         <span class="pedido-id">Pedido #<?= $ped['id_pedido'] ?></span>
                         <span class="pedido-data"><?= date('d/m/Y \à\s H:i', strtotime($ped['data_pedido'])) ?></span>
                         <span class="badge-status <?= $statusClass ?>"><?= htmlspecialchars($ped['status']) ?></span>
+                        <span>
+                            <form method="POST" style="display:inline;">
+                                <input type="hidden" name="id_pedido" value="<?= $pedido['id_pedido']; ?>">
+                                <button type="submit" name="lixeira" class="btn-acao btn-lixeira"><img src="./imagens/delete.png" width="19px"></button>
+                            </form>
+                        </span>
                     </div>
                     <span class="pedido-total">Total: R$ <?= number_format($ped['total'], 2, ',', '.') ?></span>
                 </div>
