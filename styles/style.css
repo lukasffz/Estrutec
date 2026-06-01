@@ -884,6 +884,7 @@ button[type="submit"]:hover {
     .badge-enviado     { background: rgba(22, 178, 212, 0.15); color: #16B2D4; border: 1px solid rgba(22,178,212,0.3); }
     .badge-entregue    { background: rgba(40, 200, 100, 0.15); color: #28C864; border: 1px solid rgba(40,200,100,0.3); }
     .badge-cancelado   { background: rgba(220,  60,  60, 0.15); color: #DC3C3C; border: 1px solid rgba(220,60,60,0.3); }
+    .badge-concluido   { background: rgba(40, 200, 100, 0.15); color: #28C864; border: 1px solid rgba(40,200,100,0.3); }
 
     .pedido-total {
     font-weight: 700;
