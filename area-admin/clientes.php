@@ -8,23 +8,6 @@ $clientes = readAll($pdo, 'cadastrados', "papel = 'cliente'");
 <html>
 <head>
     <link rel="stylesheet" href="styles/admin-style.css">
-    <style>
-        .badge-status {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-        .badge-ativo {
-            background-color: #14532d;
-            color: #4ade80;
-        }
-        .badge-inativo {
-            background-color: #3b1219;
-            color: #fca5a5;
-        }
-    </style>
 </head>
 <body>
 <?php include 'partials/header.php'; ?>
@@ -64,7 +47,7 @@ $clientes = readAll($pdo, 'cadastrados', "papel = 'cliente'");
                         <?php endif; ?>
                     </td>
                     <td class="acoes">
-                        <a href="editar-cliente.php?id=<?= $c['id_login'] ?>"
+                        <a href="./editar-cliente.php?id=<?= $c['id_login'] ?>"
                            class="btn-acao btn-editar"
                            title="Editar">
                             <img src="../imagens/edit.png" width="16" height="16" alt="Editar">

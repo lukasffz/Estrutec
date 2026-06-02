@@ -79,51 +79,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <title>Editar Funcionário</title>
     <link rel="stylesheet" href="styles/admin-style.css">
-    <style>
-        .erro-lista {
-            background-color: #3b1219;
-            border-left: 4px solid #DC2626;
-            border-radius: 8px;
-            padding: 0.75rem 1rem;
-            margin-bottom: 1.5rem;
-            color: #fca5a5;
-            font-size: 14px;
-        }
-        .erro-lista ul {
-            margin: 0;
-            padding-left: 1.2rem;
-        }
-        .form-admin .campo-status {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            margin-top: 1rem;
-            color: #C0CDE0;
-        }
-        .form-admin .campo-status input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            accent-color: #4A90D9;
-        }
-        .link-voltar {
-            display: inline-block;
-            margin-bottom: 1.5rem;
-            color: #4A90D9;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        .link-voltar:hover { text-decoration: underline; }
-        .badge-id {
-            display: inline-block;
-            background: #2e4266;
-            color: #7aa7d9;
-            border-radius: 20px;
-            padding: 2px 12px;
-            font-size: 13px;
-            margin-left: 0.5rem;
-            vertical-align: middle;
-        }
-    </style>
 </head>
 <body>
 <?php include 'partials/header.php'; ?>

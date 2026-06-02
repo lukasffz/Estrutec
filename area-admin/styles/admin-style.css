@@ -238,6 +238,21 @@ tbody td {
     padding: 11px 14px;
     color: #D0D8E8;
 }
+.badge-status {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.badge-ativo {
+    background-color: #14532d;
+    color: #4ade80;
+}
+.badge-inativo {
+    background-color: #3b1219;
+    color: #fca5a5;
+}
 /*botoes de acao tabela*/
 .acoes {
     display: flex;
@@ -320,41 +335,86 @@ tbody td {
 }
 /*formularios de cadastro e etc adm*/
 .form-admin {
-    max-width: 600px;
-    background-color: #1F2C45;
-    padding: 2rem;
-    border-radius: 16px;
-    margin: 0 auto;
+  max-width: 600px;
+  background-color: #1F2C45;
+  padding: 2rem;
+  border-radius: 16px;
+  margin: 0 auto;
 }
 .form-admin label {
-    display: block;
-    margin: 1rem 0 0.5rem;
-    color: #C0CDE0;
+  display: block;
+  margin: 1rem 0 0.5rem;
+  color: #C0CDE0;
 }
-.form-admin input,
-.form-admin select,
+.form-admin input, 
+.form-admin select, 
 .form-admin textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border-radius: 8px;
-    border: 1px solid #2e4266;
-    background-color: #28395A;
-    color: #E0E0E0;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #2e4266;
+  background-color: #28395A;
+  color: #E0E0E0;
 }
 .form-admin button {
-    margin-top: 1.5rem;
-    background-color: #4A90D9;
-    color: #0F172A;
-    border: none;
-    padding: 0.75rem;
-    border-radius: 40px;
-    font-weight: bold;
-    width: 100%;
-    cursor: pointer;
-    transition: background 0.2s;
+  margin-top: 1.5rem;
+  background-color: #4A90D9;
+  color: #0F172A;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 40px;
+  font-weight: bold;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 .form-admin button:hover {
-    background-color: #6aa9f0;
+  background-color: #6aa9f0;
+}
+.erro-lista {
+  background-color: #3b1219;
+  border-left: 4px solid #DC2626;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  color: #fca5a5;
+  font-size: 14px;
+}
+.erro-lista ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+.form-admin .campo-status {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  color: #C0CDE0;
+}
+.form-admin .campo-status input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #4A90D9;
+}
+.link-voltar {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #4A90D9;
+  text-decoration: none;
+  font-size: 14px;
+}
+.link-voltar:hover {
+  text-decoration: underline;
+}
+.badge-id {
+  display: inline-block;
+  background: #2e4266;
+  color: #7aa7d9;
+  border-radius: 20px;
+  padding: 2px 12px;
+  font-size: 13px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
 }
 /*responsividade*/
 @media (max-width: 768px) {
