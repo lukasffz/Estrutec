@@ -393,10 +393,10 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 65vh;
     width: 100%;
+    padding: 1rem 0;
 }
-
 .login-box {
     background-color: #1F2C45;
     padding: 3rem 2.5rem;
@@ -409,25 +409,21 @@ h3 {
     max-width: 420px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
-
 .login-box img {
     width: 200px;
 }
-
 .formulario-login {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     width: 100%;
 }
-
 .formulario-login label {
     font-size: 0.9rem;
     font-weight: 500;
     color: #C0CDE0;
     margin-bottom: 0.15rem;
 }
-
 .formulario-login input {
     width: 100%;
     padding: 0.7rem 1rem;
@@ -440,12 +436,10 @@ h3 {
     box-sizing: border-box;
     transition: border-color 0.2s;
 }
-
 .formulario-login input:focus {
     outline: none;
     border-color: #4A90D9;
 }
-
 .btn-login {
     margin-top: 0.5rem;
     width: 100%;
@@ -459,11 +453,9 @@ h3 {
     cursor: pointer;
     transition: background-color 0.2s;
 }
-
 .btn-login:hover {
     background-color: #6aa9f0;
 }
-
 .form-container {
     width: 450px;
     margin: 3rem auto;
@@ -472,24 +464,20 @@ h3 {
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
-
 .form-container h2 {
     text-align: center;
     margin-bottom: 1.5rem;
     color: #4A90D9;
 }
-
 .form-group {
     margin-bottom: 1rem;
 }
-
 .form-group label {
     display: block;
     margin-bottom: 0.4rem;
     font-weight: 500;
     color: #C0CDE0;
 }
-
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -501,7 +489,6 @@ h3 {
     color: #E0E0E0;
     font-family: inherit;
 }
-
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
@@ -540,7 +527,6 @@ button[type="submit"],
 .btn-acao:hover {
     opacity: 0.85;
 }
-
 .btn-lixeira {
     background-color: #66102300;
     filter: invert();
@@ -557,43 +543,37 @@ button[type="submit"]:hover {
     text-align: center;
     margin-top: 1rem;
 }
-
 /*carrinho*/
-    .carrinho-wrapper {
+.carrinho-wrapper {
     max-width: 1100px;
     margin: 2.5rem auto;
     padding: 0 2rem;
-    }
-
-    .carrinho-titulo {
+}
+.carrinho-titulo {
     font-size: 2rem;
     margin-bottom: 2rem;
     border-left: 5px solid #4A90D9;
     padding-left: 1rem;
-    }
-
-    /* Layout principal: tabela + resumo lado a lado */
-    .carrinho-layout {
+}
+/* Layout principal: tabela + resumo lado a lado */
+.carrinho-layout {
     display: grid;
     grid-template-columns: 1fr 320px;
     gap: 2rem;
     align-items: start;
-    }
-
-    /* Tabela */
-    .carrinho-tabela-wrap {
+}
+/* Tabela */
+.carrinho-tabela-wrap {
     background: #1F2C45;
     border-radius: 16px;
     overflow: hidden;
     border: 1px solid #2e4266;
-    }
-
-    .carrinho-tabela-wrap table {
+}
+.carrinho-tabela-wrap table {
     width: 100%;
     border-collapse: collapse;
-    }
-
-    .carrinho-tabela-wrap th {
+}
+.carrinho-tabela-wrap th {
     background: #1B2B44;
     color: #A0B0C8;
     font-size: 0.8rem;
@@ -601,32 +581,27 @@ button[type="submit"]:hover {
     letter-spacing: 0.05em;
     padding: 14px 16px;
     font-weight: 600;
-    }
-
-    .carrinho-tabela-wrap td {
+}
+.carrinho-tabela-wrap td {
     padding: 16px;
     border-bottom: 1px solid #2e4266;
     vertical-align: middle;
     color: #E0E0E0;
     font-size: 0.95rem;
-    }
-
-    .carrinho-tabela-wrap tbody tr:last-child td {
+}
+.carrinho-tabela-wrap tbody tr:last-child td {
     border-bottom: none;
-    }
-
-    .carrinho-tabela-wrap tbody tr:hover {
+}
+.carrinho-tabela-wrap tbody tr:hover {
     background: #1a2a42;
-    }
-
-    /* Célula de produto com imagem */
-    .prod-cell {
+}
+/* Célula de produto com imagem */
+.prod-cell {
     display: flex;
     align-items: center;
     gap: 14px;
-    }
-
-    .prod-cell img {
+}
+.prod-cell img {
     width: 58px;
     height: 58px;
     object-fit: cover;
@@ -634,16 +609,14 @@ button[type="submit"]:hover {
     background: #28395A;
     border: 1px solid #2e4266;
     flex-shrink: 0;
-    }
-
-    .prod-nome {
+}
+.prod-nome {
     font-weight: 600;
     color: #E0E0E0;
     font-size: 0.95rem;
-    }
-
-    /* Controle de quantidade — agora com links ao invés de botões JS */
-    .qty-ctrl {
+}
+/* Controle de quantidade — agora com links ao invés de botões JS */
+.qty-ctrl {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -651,9 +624,8 @@ button[type="submit"]:hover {
     border: 1px solid #2e4266;
     border-radius: 30px;
     padding: 4px 10px;
-    }
-
-    .qty-btn {
+}
+.qty-btn {
     width: 26px;
     height: 26px;
     border-radius: 50%;
@@ -668,23 +640,20 @@ button[type="submit"]:hover {
     line-height: 1;
     transition: background 0.2s;
     flex-shrink: 0;
-    }
-
-    .qty-btn:hover {
+}
+.qty-btn:hover {
     background: #4A90D9;
     color: #fff;
-    }
-
-    .qty-valor {
+}
+.qty-valor {
     width: 36px;
     text-align: center;
     color: #E0E0E0;
     font-size: 0.95rem;
     font-weight: 600;
-    }
-
-    /* Botão remover */
-    .btn-remover {
+}
+/* Botão remover */
+.btn-remover {
     background: none;
     border: none;
     cursor: pointer;
@@ -694,51 +663,44 @@ button[type="submit"]:hover {
     display: flex;
     align-items: center;
     text-decoration: none;
-    }
-
-    .btn-remover img {
+}
+.btn-remover img {
     width: 18px;
     opacity: 0.5;
     filter: invert(1);
     transition: opacity 0.2s;
-    }
-
-    .btn-remover:hover {
+}
+.btn-remover:hover {
     background: rgba(220, 60, 60, 0.15);
-    }
-
-    .btn-remover:hover img {
+}
+.btn-remover:hover img {
     opacity: 1;
     filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(320deg);
-    }
-
-    /* Caixa de resumo */
-    .resumo-box {
+}
+/* Caixa de resumo */
+.resumo-box {
     background: #1F2C45;
     border-radius: 16px;
     border: 1px solid #2e4266;
     padding: 1.5rem;
     position: sticky;
     top: 100px;
-    }
-
-    .resumo-box h2 {
+}
+.resumo-box h2 {
     font-size: 1.1rem;
     color: #E0E0E0;
     margin-bottom: 1.25rem;
     padding-bottom: 0.75rem;
     border-bottom: 1px solid #2e4266;
-    }
-
-    .resumo-linha {
+}
+.resumo-linha {
     display: flex;
     justify-content: space-between;
     font-size: 0.9rem;
     color: #A0B0C8;
     margin-bottom: 0.75rem;
-    }
-
-    .resumo-total {
+}
+.resumo-total {
     display: flex;
     justify-content: space-between;
     font-size: 1.15rem;
@@ -748,13 +710,11 @@ button[type="submit"]:hover {
     border-top: 1px solid #2e4266;
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
-    }
-
-    .resumo-total span:last-child {
+}
+.resumo-total span:last-child {
     color: #4A90D9;
-    }
-
-    .btn-finalizar {
+}
+.btn-finalizar {
     display: block;
     width: 100%;
     padding: 13px;
@@ -770,78 +730,67 @@ button[type="submit"]:hover {
     margin-bottom: 0.75rem;
     font-family: inherit;
     text-decoration: none;
-    }
-
-    .btn-finalizar:hover {
+}
+.btn-finalizar:hover {
     opacity: 0.88;
     transform: translateY(-2px);
-    }
-
-    .btn-continuar {
+}
+.btn-continuar {
     display: block;
     text-align: center;
     font-size: 0.85rem;
     color: #A0B0C8;
     text-decoration: none;
     transition: color 0.2s;
-    }
-
-    .btn-continuar:hover {
+}
+.btn-continuar:hover {
     color: #4A90D9;
-    }
-
-    /* Carrinho vazio */
-    .carrinho-vazio {
+}
+/* Carrinho vazio */
+.carrinho-vazio {
     text-align: center;
     padding: 4rem 2rem;
     color: #A0B0C8;
-    }
-
-    .carrinho-vazio p {
+}
+.carrinho-vazio p {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
-    }
-
-    /* Responsivo */
-    @media (max-width: 820px) {
+}
+/* Responsivo */
+@media (max-width: 820px) {
     .carrinho-layout {
         grid-template-columns: 1fr;
     }
-    .resumo-box {
+.resumo-box {
         position: static;
     }
-    }
-
+}
 /*meus-pedidos*/
 .pedidos-wrapper {
     max-width: 900px;
     margin: 2.5rem auto;
     padding: 0 2rem;
-    }
-
-    .pedidos-titulo {
+}
+.pedidos-titulo {
     font-size: 2rem;
     margin-bottom: 2rem;
     border-left: 5px solid #4A90D9;
     padding-left: 1rem;
-    }
-
-    /* Card de cada pedido */
-    .pedido-card {
+}
+/* Card de cada pedido */
+.pedido-card {
     background: #1F2C45;
     border-radius: 16px;
     border: 1px solid #2e4266;
     margin-bottom: 1.5rem;
     overflow: hidden;
     transition: border-color 0.2s;
-    }
-
-    .pedido-card:hover {
+}
+.pedido-card:hover {
     border-color: #4A90D9;
-    }
-
-    /* Cabeçalho do card */
-    .pedido-header {
+}
+/* Cabeçalho do card */
+.pedido-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -849,28 +798,24 @@ button[type="submit"]:hover {
     background: #1B2B44;
     flex-wrap: wrap;
     gap: 0.75rem;
-    }
-
-    .pedido-header-left {
+}
+.pedido-header-left {
     display: flex;
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
-    }
-
-    .pedido-id {
+}
+.pedido-id {
     font-weight: 700;
     color: #4A90D9;
     font-size: 1rem;
-    }
-
-    .pedido-data {
+}
+.pedido-data {
     font-size: 0.85rem;
     color: #A0B0C8;
-    }
-
-    /* Badge de status */
-    .badge-status {
+}
+/* Badge de status */
+.badge-status {
     display: inline-block;
     padding: 4px 12px;
     border-radius: 20px;
@@ -878,33 +823,28 @@ button[type="submit"]:hover {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    }
-
-    .badge-pendente    { background: rgba(255, 193, 7,  0.15); color: #FFC107; border: 1px solid rgba(255,193,7,0.3); }
-    .badge-processando { background: rgba(74, 144, 217, 0.15); color: #4A90D9; border: 1px solid rgba(74,144,217,0.3); }
-    .badge-enviado     { background: rgba(22, 178, 212, 0.15); color: #16B2D4; border: 1px solid rgba(22,178,212,0.3); }
-    .badge-entregue    { background: rgba(40, 200, 100, 0.15); color: #28C864; border: 1px solid rgba(40,200,100,0.3); }
-    .badge-cancelado   { background: rgba(220,  60,  60, 0.15); color: #DC3C3C; border: 1px solid rgba(220,60,60,0.3); }
-    .badge-concluido   { background: rgba(40, 200, 100, 0.15); color: #28C864; border: 1px solid rgba(40,200,100,0.3); }
-
-    .pedido-total {
+}
+.badge-pendente    { background: rgba(255, 193, 7,  0.15); color: #FFC107; border: 1px solid rgba(255,193,7,0.3); }
+.badge-processando { background: rgba(74, 144, 217, 0.15); color: #4A90D9; border: 1px solid rgba(74,144,217,0.3); }
+.badge-enviado     { background: rgba(22, 178, 212, 0.15); color: #16B2D4; border: 1px solid rgba(22,178,212,0.3); }
+.badge-entregue    { background: rgba(40, 200, 100, 0.15); color: #28C864; border: 1px solid rgba(40,200,100,0.3); }
+.badge-cancelado   { background: rgba(220,  60,  60, 0.15); color: #DC3C3C; border: 1px solid rgba(220,60,60,0.3); }
+.badge-concluido   { background: rgba(40, 200, 100, 0.15); color: #28C864; border: 1px solid rgba(40,200,100,0.3); }
+.pedido-total {
     font-weight: 700;
     color: #E0E0E0;
     font-size: 1rem;
     white-space: nowrap;
-    }
-
-    /* Lista de itens */
-    .pedido-itens {
+}
+/* Lista de itens */
+.pedido-itens {
     padding: 1rem 1.5rem;
-    }
-
-    .pedido-itens table {
+}
+.pedido-itens table {
     width: 100%;
     border-collapse: collapse;
-    }
-
-    .pedido-itens th {
+}
+.pedido-itens th {
     font-size: 0.78rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -913,35 +853,29 @@ button[type="submit"]:hover {
     border-bottom: 1px solid #2e4266;
     text-align: left;
     background: transparent;
-    }
-
-    .pedido-itens td {
+}
+.pedido-itens td {
     padding: 10px 8px;
     border-bottom: 1px solid #1B2B44;
     color: #C0CDE0;
     font-size: 0.9rem;
-    }
-
-    .pedido-itens tbody tr:last-child td {
+}
+.pedido-itens tbody tr:last-child td {
     border-bottom: none;
-    }
-
-    .pedido-itens tbody tr:hover {
+}
+.pedido-itens tbody tr:hover {
     background: rgba(255,255,255,0.03);
-    }
-
-    /* Estado vazio */
-    .pedidos-vazios {
+}
+/* Estado vazio */
+.pedidos-vazios {
     text-align: center;
     padding: 4rem 2rem;
     color: #A0B0C8;
-    }
-
-    .pedidos-vazios p {
+}
+.pedidos-vazios p {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
-    }
-
+}
 /*tabelas*/
 .table-container {
     overflow-x: auto;
@@ -949,29 +883,24 @@ button[type="submit"]:hover {
     border-radius: 12px;
     padding: 0;
 }
-
 table {
     width: 100%;
     border-collapse: collapse;
 }
-
 th,
 td {
     text-align: left;
     padding: 12px 16px;
     border-bottom: 1px solid #2e4266;
 }
-
 th {
     background-color: #1B2B44;
     color: #A0B0C8;
     font-weight: 600;
 }
-
 tbody tr:hover {
     background-color: #1a2a42;
 }
-
 /*footer*/
 .site-footer {
     background-color: #1F2C45;
@@ -982,7 +911,6 @@ tbody tr:hover {
     color: #A0B0C8;
     font-size: 0.9rem;
 }
-
 /*responsividade*/
 @media (max-width: 768px) {
     .site-header__inner {

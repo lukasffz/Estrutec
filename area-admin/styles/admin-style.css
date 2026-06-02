@@ -9,6 +9,7 @@ body {
     background-color: #0F172A;
     color: #E0E0E0;
     display: flex;
+    min-height: 100vh;
 }
 /*menu lateral adm*/
 .admin-sidebar {
@@ -19,6 +20,7 @@ body {
     top: 0;
     padding: 2rem 1rem;
     border-right: 1px solid #2e4266;
+    flex-shrink: 0;
 }
 .admin-sidebar .logo img {
     width: 100%;
@@ -48,9 +50,25 @@ body {
     flex: 1;
     padding: 2rem;
     overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+}
+/* Margem aumentada para separar o título da tabela/conteúdo */
+.admin-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #FFFFFF;
+}
+/* Sucessos Globais */
+.msg-sucesso {
+    color: #4ade80;
+    margin-bottom: 1.5rem;
+    font-size: 14px;
+    font-weight: 500;
 }
 
-/* Novo Componente: Bolha Glassmorphic de Boas-Vindas */
+/* Bolha Glassmorphic de Boas-Vindas */
 .welcome-glass-card {
     display: flex;
     justify-content: space-between;
@@ -61,7 +79,7 @@ body {
     border: 1px solid rgba(74, 144, 217, 0.2);
     border-radius: 16px;
     padding: 1.5rem 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 .welcome-info h2 {
@@ -91,15 +109,6 @@ body {
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.5px;
-}
-.system-time {
-    font-size: 0.9rem;
-    color: #C0CDE0;
-    font-weight: 500;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 6px 14px;
-    border-radius: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /*cards da pagina de dashboard*/
@@ -163,6 +172,7 @@ body {
     overflow-x: auto;
     background-color: #1F2C45;
     border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 /* select customizado */
 .select-wrapper {
@@ -277,7 +287,7 @@ thead th {
     font-weight: 600;
     font-size: 13px;
     text-align: left;
-    padding: 12px 14px;
+    padding: 14px;
     border-bottom: 1px solid #2A3F63;
 }
 tbody tr {
@@ -288,7 +298,7 @@ tbody tr:hover {
     background-color: #1a2a42;
 }
 tbody td {
-    padding: 11px 14px;
+    padding: 14px;
     color: #D0D8E8;
     vertical-align: middle;
 }
@@ -306,7 +316,7 @@ tbody td {
     font-size: 12px;
     font-weight: 600;
     text-align: center;
-    min-width: 75px;
+    min-width: 85px;
 }
 .badge-ativo {
     background-color: rgba(16, 185, 129, 0.12);
@@ -318,6 +328,17 @@ tbody td {
     color: #EF4444;
     border: 1px solid rgba(239, 68, 68, 0.3);
 }
+.badge-online {
+    background-color: rgba(74, 222, 128, 0.12);
+    color: #4ade80;
+    border: 1px solid rgba(74, 222, 128, 0.3);
+}
+.badge-offline {
+    background-color: rgba(100, 116, 139, 0.12);
+    color: #94a3b8;
+    border: 1px solid rgba(100, 116, 139, 0.3);
+}
+
 /*botoes de acao tabela*/
 .acoes {
     display: flex;
@@ -356,6 +377,13 @@ tbody td {
 .btn-editar{ 
     background-color: transparent;
     filter: invert();
+}
+.btn-disabled {
+    background-color: #2e4266 !important; 
+    color: #555 !important; 
+    cursor: not-allowed !important; 
+    opacity: 0.4;
+    filter: none !important;
 }
 .btn {
     display: block; 
@@ -401,88 +429,100 @@ tbody td {
 .rodape-alerta {
     color: #FBBF24;
 }
-/*formularios de cadastro e etc adm*/
+
+/* Formularios de cadastro centralizados perfeitamente na tela */
 .form-admin {
-  max-width: 600px;
-  background-color: #1F2C45;
-  padding: 2rem;
-  border-radius: 16px;
-  margin: 0 auto 2rem;
+    width: 100%;
+    max-width: 600px;
+    background-color: #1F2C45;
+    padding: 2.5rem;
+    border-radius: 16px;
+    margin: auto; /* Força a centralização vertical e horizontal dentro do container flex */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 .form-admin label {
-  display: block;
-  margin: 1rem 0 0.5rem;
-  color: #C0CDE0;
+    display: block;
+    margin: 1.2rem 0 0.5rem;
+    color: #C0CDE0;
+    font-size: 14px;
 }
 .form-admin input, 
 .form-admin select, 
 .form-admin textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 8px;
-  border: 1px solid #2e4266;
-  background-color: #28395A;
-  color: #E0E0E0;
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #2e4266;
+    background-color: #28395A;
+    color: #E0E0E0;
+    font-family: 'Archivo', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.form-admin input:focus, 
+.form-admin select:focus, 
+.form-admin textarea:focus {
+    border-color: #4A90D9;
 }
 .form-admin button {
-  margin-top: 1.5rem;
-  background-color: #4A90D9;
-  color: #0F172A;
-  border: none;
-  padding: 0.75rem;
-  border-radius: 40px;
-  font-weight: bold;
-  width: 100%;
-  cursor: pointer;
-  transition: background 0.2s;
+    margin-top: 2rem;
+    background-color: #4A90D9;
+    color: #0F172A;
+    border: none;
+    padding: 0.85rem;
+    border-radius: 40px;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 .form-admin button:hover {
-  background-color: #6aa9f0;
+    background-color: #6aa9f0;
 }
 .erro-lista {
-  background-color: #3b1219;
-  border-left: 4px solid #DC2626;
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
-  margin-bottom: 1.5rem;
-  color: #fca5a5;
-  font-size: 14px;
+    background-color: #3b1219;
+    border-left: 4px solid #DC2626;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    color: #fca5a5;
+    font-size: 14px;
 }
 .erro-lista ul {
-  margin: 0;
-  padding-left: 1.2rem;
+    margin: 0;
+    padding-left: 1.2rem;
 }
 .form-admin .campo-status {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-top: 1rem;
-  color: #C0CDE0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1.2rem;
+    color: #C0CDE0;
 }
 .form-admin .campo-status input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: #4A90D9;
+    width: 18px;
+    height: 18px;
+    accent-color: #4A90D9;
 }
 .link-voltar {
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  color: #4A90D9;
-  text-decoration: none;
-  font-size: 14px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: #4A90D9;
+    text-decoration: none;
+    font-size: 14px;
 }
 .link-voltar:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 .badge-id {
-  display: inline-block;
-  background: #2e4266;
-  color: #7aa7d9;
-  border-radius: 20px;
-  padding: 2px 12px;
-  font-size: 13px;
-  margin-left: 0.5rem;
-  vertical-align: middle;
+    display: inline-block;
+    background: #2e4266;
+    color: #7aa7d9;
+    border-radius: 20px;
+    padding: 2px 12px;
+    font-size: 13px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
 }
 /*responsividade*/
 @media (max-width: 768px) {
@@ -495,11 +535,19 @@ tbody td {
         position: relative;
         border-right: none;
         border-bottom: 1px solid #2e4266;
+        padding: 1.5rem 1rem;
+    }
+    .admin-sidebar .logo img {
+        max-width: 180px;
+        margin-bottom: 1rem;
     }
     .admin-sidebar nav ul {
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem;
+    }
+    .admin-sidebar nav a {
+        padding: 0.5rem 0.75rem;
     }
     .admin-main {
         padding: 1rem;
@@ -513,5 +561,9 @@ tbody td {
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
+    }
+    .form-admin {
+        padding: 1.5rem;
+        margin-top: 1rem;
     }
 }

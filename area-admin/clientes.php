@@ -5,17 +5,19 @@ require_once '../config/crud.php';
 $clientes = readAll($pdo, 'cadastrados', "papel = 'cliente'");
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
+    <title>Clientes Cadastrados - Estrutec</title>
     <link rel="stylesheet" href="styles/admin-style.css">
 </head>
 <body>
 <?php include 'partials/header.php'; ?>
 <div class="admin-main">
-    <h2>Clientes Cadastrados</h2>
+    <h2 class="admin-title">Clientes Cadastrados</h2>
 
     <?php if (isset($_GET['sucesso'])): ?>
-        <p style="color:#4ade80; margin-bottom:1rem;">✔ Cliente atualizado com sucesso.</p>
+        <p class="msg-sucesso">✔ Cliente atualizado com sucesso.</p>
     <?php endif; ?>
 
     <div class="table-container">
