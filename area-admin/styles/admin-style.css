@@ -237,21 +237,33 @@ tbody tr:hover {
 tbody td {
     padding: 11px 14px;
     color: #D0D8E8;
+    vertical-align: middle;
 }
+
+/* Cores de Alerta de Quantidade sem Inline Style */
+.qtd-critica { color: #EF4444; font-weight: bold; }
+.qtd-alerta { color: #FBBF24; font-weight: bold; }
+.qtd-normal { color: #D0D8E8; }
+
+/* Badges estruturados com base no RGBA moderno */
 .badge-status {
     display: inline-block;
-    padding: 3px 10px;
+    padding: 5px 14px;
     border-radius: 20px;
     font-size: 12px;
     font-weight: 600;
+    text-align: center;
+    min-width: 75px;
 }
 .badge-ativo {
-    background-color: #14532d;
-    color: #4ade80;
+    background-color: rgba(16, 185, 129, 0.12);
+    color: #10B981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
 }
 .badge-inativo {
-    background-color: #3b1219;
-    color: #fca5a5;
+    background-color: rgba(239, 68, 68, 0.12);
+    color: #EF4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
 }
 /*botoes de acao tabela*/
 .acoes {
@@ -285,22 +297,25 @@ tbody td {
     color: #fff;
 }
 .btn-lixeira {
-    background-color: #66102300;
+    background-color: transparent;
     filter: invert();
 }
 .btn-editar{ 
-    background-color:#e6541b00;
+    background-color: transparent;
     filter: invert();
 }
 .btn {
-    display:inline-block; margin-top:1rem; 
+    display: block; 
+    margin-top: 1rem; 
     background: #dadada;
-    border-radius: 40px ;
-    text-decoration:none; 
+    border-radius: 40px;
+    text-decoration: none; 
     color: #20242b;  
-    padding-top:10px;
-    padding-bottom:10px;padding-left:237px;
-    padding-right:237px;  
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    transition: background-color 0.2s;
 }
 .btn:hover{
     background-color: #bdbdbd;
@@ -339,7 +354,7 @@ tbody td {
   background-color: #1F2C45;
   padding: 2rem;
   border-radius: 16px;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
 }
 .form-admin label {
   display: block;

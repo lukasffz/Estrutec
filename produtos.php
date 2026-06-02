@@ -3,11 +3,13 @@ require_once 'config/crud.php';
 session_start(); 
 
 $categoriaSelecionada = $_GET['categoria'] ?? '';
-$where = $categoriaSelecionada ? "categoria = '$categoriaSelecionada'" : null;
-$produtos = readAll($pdo, 'produtos', $where);
 
-// Busca todas as categorias distintas para o filtro
-$todasCategorias = readAll($pdo, 'produtos', '1 GROUP BY categoria ORDER BY categoria');
+$where = "status = 1";
+if ($categoriaSelecionada) {
+    $where .= " AND categoria = '$categoriaSelecionada'";
+}
+$produtos = readAll($pdo, 'produtos', $where);
+$todasCategorias = readAll($pdo, 'produtos', 'status = 1 GROUP BY categoria ORDER BY categoria');
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -31,7 +33,6 @@ $todasCategorias = readAll($pdo, 'produtos', '1 GROUP BY categoria ORDER BY cate
             ?>
         </h1>
 
-        <!-- Filtro de categorias (capitalizado) -->
         <div class="filtros">
             <a href="produtos.php" class="filtro-btn <?php echo !$categoriaSelecionada ? 'ativo' : ''; ?>">Todos</a>
             <?php foreach ($todasCategorias as $cat): ?>
@@ -43,7 +44,6 @@ $todasCategorias = readAll($pdo, 'produtos', '1 GROUP BY categoria ORDER BY cate
             <?php endforeach; ?>
         </div>
 
-        <!-- Listagem de produtos -->
         <?php if (count($produtos) > 0): ?>
             <div class="produtos-grid">
                 <?php foreach ($produtos as $p): ?>

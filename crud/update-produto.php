@@ -5,21 +5,19 @@ if ($_SESSION['papel'] === 'cliente') exit('Acesso negado');
 
 $id = $_POST['id'];
 
-// Se for ação de edição completa (formulário com campo "editar")
 if (isset($_POST['editar'])) {
-    
-    // Alinhamento de segurança: Garante que a quantidade digitada nunca seja menor que 0
     $quantidade_segura = max(0, (int)$_POST['quantidade']);
+    $status = isset($_POST['status']) ? 1 : 0;
 
     update($pdo, 'produtos', [
         'item' => $_POST['nome'],
         'categoria' => $_POST['categoria'],
         'descricao' => $_POST['descricao'],
         'preco' => str_replace(',', '.', $_POST['preco']),
-        'quantidade' => $quantidade_segura // Utiliza a variável tratada
+        'quantidade' => $quantidade_segura,
+        'status' => $status
     ], "id = $id");
 } 
-// Senão, ações de + / - (botões da tabela)
 else {
     $acao = $_POST['acao'] ?? '';
     $produto = read($pdo, 'produtos', "id = $id");
