@@ -1,15 +1,19 @@
 <?php
 require_once '../config/crud.php';
-// REMOVIDO: $requer_gerente = true; (Pois funcionário também entra aqui)
 include '../config/auth.php';
 
 $papel_usuario = $_SESSION['papel'];
 
-// Dados que AMBOS (Funcionário e Gerente) podem ver
+// --- BUSCA O NOME DO USUÁRIO DIRETO DO BANCO DE DADOS ---
+$id_usuario_logado = $_SESSION['id_login'] ?? $_SESSION['usuario_id'] ?? $_SESSION['id'] ?? 0;
+$usuario_db = read($pdo, 'cadastrados', "id_login = $id_usuario_logado");
+$nome_usuario = $usuario_db['nome'] ?? $_SESSION['nome'] ?? 'Administrador';
+// --------------------------------------------------------
+
+// Dados do dashboard
 $criticos = count(readAll($pdo, 'produtos', "quantidade < 30"));
 $pendentes = count(readAll($pdo, 'pedidos', "status = 'Pendente'"));
 
-// Dados exclusivos do GERENTE (só puxa do banco se for gerente)
 if ($papel_usuario === 'gerente') {
     $faturamento = readAll($pdo, 'pedidos', "status = 'Concluído'");
     $totalFat = array_sum(array_column($faturamento, 'total'));
@@ -17,14 +21,26 @@ if ($papel_usuario === 'gerente') {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
     <title>Dashboard - Estrutec</title>
     <link rel="stylesheet" href="styles/admin-style.css">
 </head>
 <body>
 <?php include 'partials/header.php'; ?>
 <div class="admin-main">
+
+    <div class="welcome-glass-card">
+        <div class="welcome-info">
+            <h2>Olá, <span class="user-highlight"><?= htmlspecialchars($nome_usuario) ?></span>!</h2>
+            <p>Seja bem-vindo ao painel de controle.</p>
+        </div>
+        <div class="welcome-meta">
+            <span class="user-role-badge"><?= ucfirst($papel_usuario) ?></span>
+        </div>
+    </div>
+
     <div class="dashboard-cards">
         
         <?php if ($papel_usuario === 'gerente'): ?>

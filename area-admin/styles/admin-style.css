@@ -49,6 +49,59 @@ body {
     padding: 2rem;
     overflow-x: auto;
 }
+
+/* Novo Componente: Bolha Glassmorphic de Boas-Vindas */
+.welcome-glass-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(31, 44, 69, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(74, 144, 217, 0.2);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+.welcome-info h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 0.25rem;
+}
+.welcome-info .user-highlight {
+    color: #4A90D9;
+}
+.welcome-info p {
+    font-size: 0.9rem;
+    color: #A0B0C8;
+}
+.welcome-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.user-role-badge {
+    background: rgba(74, 144, 217, 0.15);
+    color: #4A90D9;
+    border: 1px solid rgba(74, 144, 217, 0.4);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.system-time {
+    font-size: 0.9rem;
+    color: #C0CDE0;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px 14px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 /*cards da pagina de dashboard*/
 .dashboard-cards {
     display: grid;
@@ -455,5 +508,10 @@ tbody td {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
+    }
+    .welcome-glass-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
     }
 }
