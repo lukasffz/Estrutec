@@ -54,10 +54,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     'processando' => 'badge-processando',
                     'enviado'     => 'badge-enviado',
                     'entregue'    => 'badge-entregue',
-                    'concluido'   => 'badge-concluido',
+                    'concluído'   => 'badge-concluido',
                     'cancelado'   => 'badge-cancelado',
                     default       => 'badge-pendente'
                 };
+                
                 $itens = readAll($pdo, 'itens_pedido', "id_pedido = {$ped['id_pedido']}");
             ?>
             <div class="pedido-card">

@@ -509,6 +509,7 @@ h3 {
 }
 button[type="submit"],
 .btn {
+    text-decoration: none;
     background-color: #4A90D9;
     color: #0F172A;
     border: none;
