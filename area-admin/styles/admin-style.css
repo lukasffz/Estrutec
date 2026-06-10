@@ -53,14 +53,14 @@ body {
     display: flex;
     flex-direction: column;
 }
-/* Margem aumentada para separar o título da tabela/conteúdo */
+/*margem aumentada para separar o título da tabela/conteúdo*/
 .admin-title {
     font-size: 1.75rem;
     font-weight: 600;
     margin-bottom: 2rem;
     color: #FFFFFF;
 }
-/* Sucessos Globais */
+/*sucessos globais*/
 .msg-sucesso {
     color: #4ade80;
     margin-bottom: 1.5rem;
@@ -68,7 +68,7 @@ body {
     font-weight: 500;
 }
 
-/* Bolha Glassmorphic de Boas-Vindas */
+/*bolha de Boas-Vindas*/
 .welcome-glass-card {
     display: flex;
     justify-content: space-between;
@@ -174,7 +174,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
-/* select customizado */
+/*select customizado*/
 .select-wrapper {
     position: relative;
     display: inline-block;
@@ -240,7 +240,7 @@ select option {
     border-color: #4A90D9;
     box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.2);
 }
-/* input de arquivo customizado */
+/*input de arquivo customizado*/
 .file-upload-input {
     display: none;
 }
@@ -303,12 +303,12 @@ tbody td {
     vertical-align: middle;
 }
 
-/* Cores de Alerta de Quantidade sem Inline Style */
+/*cores de Alerta de Quantidade sem Inline Style*/
 .qtd-critica { color: #EF4444; font-weight: bold; }
 .qtd-alerta { color: #FBBF24; font-weight: bold; }
 .qtd-normal { color: #D0D8E8; }
 
-/* Badges estruturados com base no RGBA moderno */
+/*badges estruturados com base no RGBA moderno*/
 .badge-status {
     display: inline-block;
     padding: 5px 14px;
@@ -430,7 +430,7 @@ tbody td {
     color: #FBBF24;
 }
 
-/* Formularios de cadastro centralizados perfeitamente na tela */
+/*formularios de cadastro centralizados perfeitamente na tela*/
 .form-admin {
     width: 100%;
     max-width: 600px;

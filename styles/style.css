@@ -5,7 +5,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Archivo', sans-serif;
     background-color: #0F172A;
@@ -15,11 +14,9 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
 html {
     scroll-behavior: smooth;
 }
-
 main {
     flex: 1;
 }
@@ -34,7 +31,6 @@ main {
     z-index: 100;
     font-size: 1.2rem;
 }
-
 .site-header__inner {
     max-width: 1500px;
     margin: 0 auto;
@@ -43,19 +39,17 @@ main {
     align-items: center;
     flex-wrap: wrap;
 }
-
 .logo img {
     height: 60px;
     width: auto;
 }
-
 .nav-principal ul {
     display: flex;
     gap: 2.5rem;
     list-style: none;
 }
 
-/* texto */
+/*texto*/
 .TextoSobre .conteudoSobre {
     position: relative;
     max-width: 650px;
@@ -63,31 +57,24 @@ main {
     color: #fff;
     z-index: 3;
 }
-
 .TextoSobre .conteudoSobre h1 {
     font-size: 55px;
     margin-bottom: 35px;
 }
-
 .TextoSobre .conteudoSobre p {
     font-size: 20px;
     line-height: 1.8;
 }
-
 .nav-principal a {
     color: #E0E0E0;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s;
 }
-
 .nav-principal a:hover {
     color: #4A90D9;
 }
-
-h1,
-h2,
-h3 {
+h1,h2,h3 {
     font-weight: 600;
     margin-bottom: 1rem;
 }
@@ -106,7 +93,6 @@ h3 {
     background-position: center;
     background-repeat: no-repeat;
 }
-
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -116,14 +102,12 @@ h3 {
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
-
 .hero-content {
     position: relative;
     z-index: 2;
     text-align: center;
     padding: 0 20px;
 }
-
 .hero-headline {
     color: #ffffff;
     font-size: clamp(2rem, 5vw, 4rem);
@@ -133,12 +117,10 @@ h3 {
     margin-bottom: 20px;
     letter-spacing: -1px;
 }
-
 .hero-headline span {
     color: #4A90D9;
     text-shadow: 0 0 15px #4A90D999;
 }
-
 .hero-tagline {
     color: #e0e0e0;
     font-size: clamp(1rem, 2vw, 1.3rem);
@@ -146,7 +128,6 @@ h3 {
     font-weight: 300;
     letter-spacing: 1px;
 }
-
 .hero-button {
     display: inline-block;
     padding: 15px 40px;
@@ -160,7 +141,6 @@ h3 {
     transition: all 0.3s ease;
     box-shadow: 0 0 10px #4A90D999;
 }
-
 .hero-button:hover {
     background: #4A90D9;
     box-shadow: 0 0 25px #4A90D999;
@@ -173,14 +153,12 @@ h3 {
     margin: 3rem auto;
     padding: 0 2rem;
 }
-
 .home-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
-
 .home-card {
     background: #1F2C45;
     border-radius: 20px;
@@ -190,48 +168,40 @@ h3 {
     border: 1px solid #2e4266;
     cursor: pointer;
 }
-
 .home-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
     border-color: #4A90D9;
 }
-
 .home-card h2 {
     color: #4A90D9;
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
 }
-
 .home-card p {
     color: #C0D0E8;
     font-size: 1rem;
 }
-
 .home-titulo {
     text-align: center;
     color: #E0E0E0;
     font-size: 2rem;
     margin: 2rem 0 0.5rem;
 }
-
 .home-subtitulo {
     text-align: center;
     color: #A0B0C8;
     margin-bottom: 1rem;
 }
-
 .home-wrapper {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
-
 .home-main {
     flex: 1;
 }
-
-/*Sobre*/
+/*sobre*/
 .TextoSobre {
     position: relative;
     width: 100%;
@@ -241,7 +211,6 @@ h3 {
     overflow: hidden;
     background-color: #020b24;
 }
-
 .TextoSobre .imagem {
     position: absolute;
     inset: 0;
@@ -249,34 +218,30 @@ h3 {
     height: 100%;
     z-index: 1;
 }
-
 .TextoSobre .imagem img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 .TextoSobre .overlaySobre {
     position: absolute;
     inset: 0;
     display: flex;
     align-items: center;
     background: linear-gradient(100deg,
-            #01081efa 0%,
-            #01081ef2 32%,
-            #01081ed1 45%,
-            #01081e73 58%,
-            transparent 72%);
+        #01081efa 0%,
+        #01081ef2 32%,
+        #01081ed1 45%,
+        #01081e73 58%,
+        transparent 72%);
     z-index: 2;
 }
-
 /*produtos*/
 .produtos-wrapper {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
-
 .produtos-main {
     max-width: 1500px;
     margin: 2rem auto;
@@ -284,47 +249,38 @@ h3 {
     width: 100%;
     flex: 1;
 }
-
 .produtos-titulo {
     font-size: 2rem;
     margin-bottom: 1.5rem;
     border-left: 5px solid #4A90D9;
     padding-left: 1rem;
 }
-
 .produtos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
-
 .produto-card {
     background-color: #1F2C45;
     border-radius: 12px;
     overflow: hidden;
-
     transition: transform 0.2s, box-shadow 0.2s;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-
     display: flex;
     flex-direction: column;
-
     height: 100%;
 }
-
 .produto-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
-
 .produto-card img {
     width: 100%;
     height: 180px;
     object-fit: cover;
     background-color: #28395A;
 }
-
 .produto-card h3 {
     font-size: 1.2rem;
     margin: 1rem 1rem 0.5rem;
@@ -332,7 +288,6 @@ h3 {
 
     min-height: 55px;
 }
-
 .produto-card p {
     font-size: 0.9rem;
     margin: 0 1rem 1rem;
@@ -340,14 +295,12 @@ h3 {
 
     min-height: 45px;
 }
-
 .filtros {
     display: flex;
     gap: 10px;
     margin-bottom: 30px;
     flex-wrap: wrap;
 }
-
 .filtro-btn {
     padding: 10px 16px;
     background: #1F2C45;
@@ -356,12 +309,10 @@ h3 {
     border-radius: 8px;
     transition: 0.3s;
 }
-
 .filtro-btn:hover {
     background: #4A90D9;
     color: #0F172A;
 }
-
 .preco {
     display: block;
     font-size: 1.3rem;
@@ -369,7 +320,6 @@ h3 {
     color: #E0E0E0;
     margin: 0 1rem 1rem;
 }
-
 .btn-comprar {
     display: block;
     margin: 1rem;
@@ -382,7 +332,6 @@ h3 {
     font-weight: bold;
     transition: 0.2s;
 }
-
 .btn-comprar:hover {
     background: #67a8eb;
 }
@@ -555,14 +504,14 @@ button[type="submit"]:hover {
     border-left: 5px solid #4A90D9;
     padding-left: 1rem;
 }
-/* Layout principal: tabela + resumo lado a lado */
+/*layout principal: tabela + resumo lado a lado*/
 .carrinho-layout {
     display: grid;
     grid-template-columns: 1fr 320px;
     gap: 2rem;
     align-items: start;
 }
-/* Tabela */
+/*tabela*/
 .carrinho-tabela-wrap {
     background: #1F2C45;
     border-radius: 16px;
@@ -595,7 +544,7 @@ button[type="submit"]:hover {
 .carrinho-tabela-wrap tbody tr:hover {
     background: #1a2a42;
 }
-/* Célula de produto com imagem */
+/*célula de produto com imagem*/
 .prod-cell {
     display: flex;
     align-items: center;
@@ -615,7 +564,7 @@ button[type="submit"]:hover {
     color: #E0E0E0;
     font-size: 0.95rem;
 }
-/* Controle de quantidade — agora com links ao invés de botões JS */
+/*controle de quantidade*/
 .qty-ctrl {
     display: inline-flex;
     align-items: center;
@@ -652,7 +601,7 @@ button[type="submit"]:hover {
     font-size: 0.95rem;
     font-weight: 600;
 }
-/* Botão remover */
+/*botão remover*/
 .btn-remover {
     background: none;
     border: none;
@@ -677,7 +626,7 @@ button[type="submit"]:hover {
     opacity: 1;
     filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(320deg);
 }
-/* Caixa de resumo */
+/*caixa de resumo*/
 .resumo-box {
     background: #1F2C45;
     border-radius: 16px;
@@ -746,7 +695,7 @@ button[type="submit"]:hover {
 .btn-continuar:hover {
     color: #4A90D9;
 }
-/* Carrinho vazio */
+/*carrinho vazio */
 .carrinho-vazio {
     text-align: center;
     padding: 4rem 2rem;
@@ -756,7 +705,7 @@ button[type="submit"]:hover {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
 }
-/* Responsivo */
+/*responsivo*/
 @media (max-width: 820px) {
     .carrinho-layout {
         grid-template-columns: 1fr;
@@ -777,7 +726,7 @@ button[type="submit"]:hover {
     border-left: 5px solid #4A90D9;
     padding-left: 1rem;
 }
-/* Card de cada pedido */
+/*card de cada pedido*/
 .pedido-card {
     background: #1F2C45;
     border-radius: 16px;
@@ -789,7 +738,7 @@ button[type="submit"]:hover {
 .pedido-card:hover {
     border-color: #4A90D9;
 }
-/* Cabeçalho do card */
+/*cabeçalho do card*/
 .pedido-header {
     display: flex;
     justify-content: space-between;
@@ -814,7 +763,7 @@ button[type="submit"]:hover {
     font-size: 0.85rem;
     color: #A0B0C8;
 }
-/* Badge de status */
+/*badge de status*/
 .badge-status {
     display: inline-block;
     padding: 4px 12px;
@@ -836,7 +785,7 @@ button[type="submit"]:hover {
     font-size: 1rem;
     white-space: nowrap;
 }
-/* Lista de itens */
+/*lista de itens*/
 .pedido-itens {
     padding: 1rem 1.5rem;
 }
@@ -866,7 +815,7 @@ button[type="submit"]:hover {
 .pedido-itens tbody tr:hover {
     background: rgba(255,255,255,0.03);
 }
-/* Estado vazio */
+/*estado vazio*/
 .pedidos-vazios {
     text-align: center;
     padding: 4rem 2rem;

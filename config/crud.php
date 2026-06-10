@@ -1,5 +1,4 @@
 <?php
-// config/crud.php
 
 $host = 'localhost';
 $port = 3306;
