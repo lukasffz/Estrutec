@@ -17,7 +17,7 @@ $clientes = readAll($pdo, 'cadastrados', "papel = 'cliente'");
     <h2 class="admin-title">Clientes Cadastrados</h2>
 
     <?php if (isset($_GET['sucesso'])): ?>
-        <p class="msg-sucesso">✔ Cliente atualizado com sucesso.</p>
+        <p class="msg-sucesso">Cliente atualizado com sucesso.</p>
     <?php endif; ?>
 
     <div class="table-container">
