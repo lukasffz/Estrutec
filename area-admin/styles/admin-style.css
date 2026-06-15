@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -67,7 +68,6 @@ body {
     font-size: 14px;
     font-weight: 500;
 }
-
 /*bolha de Boas-Vindas*/
 .welcome-glass-card {
     display: flex;
@@ -110,7 +110,6 @@ body {
     font-weight: 600;
     letter-spacing: 0.5px;
 }
-
 /*cards da pagina de dashboard*/
 .dashboard-cards {
     display: grid;
@@ -302,12 +301,10 @@ tbody td {
     color: #D0D8E8;
     vertical-align: middle;
 }
-
 /*cores de Alerta de Quantidade sem Inline Style*/
 .qtd-critica { color: #EF4444; font-weight: bold; }
 .qtd-alerta { color: #FBBF24; font-weight: bold; }
 .qtd-normal { color: #D0D8E8; }
-
 /*badges estruturados com base no RGBA moderno*/
 .badge-status {
     display: inline-block;
@@ -338,7 +335,6 @@ tbody td {
     color: #94a3b8;
     border: 1px solid rgba(100, 116, 139, 0.3);
 }
-
 /*botoes de acao tabela*/
 .acoes {
     display: flex;
@@ -429,7 +425,6 @@ tbody td {
 .rodape-alerta {
     color: #FBBF24;
 }
-
 /*formularios de cadastro centralizados perfeitamente na tela*/
 .form-admin {
     width: 100%;

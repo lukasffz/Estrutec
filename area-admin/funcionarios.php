@@ -19,7 +19,6 @@ $funcionarios = readAll($pdo, 'cadastrados', "papel IN ('funcionario','gerente')
     <?php if (isset($_GET['sucesso'])): ?>
         <p class="msg-sucesso">✔ Funcionário atualizado com sucesso.</p>
     <?php endif; ?>
-
     <?php if (isset($_GET['deletado'])): ?>
         <p class="msg-sucesso">✔ Funcionário excluído com sucesso.</p>
     <?php endif; ?>

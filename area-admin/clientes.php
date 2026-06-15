@@ -4,6 +4,7 @@ include '../config/auth.php';
 require_once '../config/crud.php';
 $clientes = readAll($pdo, 'cadastrados', "papel = 'cliente'");
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['nome']     = $usuario['nome'];
         $_SESSION['papel']    = $usuario['papel'];
 
-        // Marca o usuário como online
         update($pdo, 'cadastrados', ['online' => 1], "id_login = {$usuario['id_login']}");
 
         if ($usuario['papel'] === 'cliente') {

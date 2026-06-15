@@ -1,5 +1,5 @@
 <?php
-// area-admin/deletar-cliente.php
+/*Arquivo para futuras atualizaões, pois retiramos a função de excluir um cliente, deixando apenas a função de desativar*/
 $requer_gerente = true;
 include '../config/auth.php';
 require_once '../config/crud.php';
@@ -16,7 +16,7 @@ if (!$id) {
     exit;
 }
 
-// Confirma que o alvo é realmente um cliente
+/*Confirma que o alvo é realmente um cliente*/
 $cliente = read($pdo, 'cadastrados', "id_login = $id AND papel = 'cliente'");
 
 if (!$cliente) {
@@ -24,7 +24,7 @@ if (!$cliente) {
     exit;
 }
 
-// Exclui — ON DELETE CASCADE remove endereços vinculados automaticamente
+/*Exclui o cliente, com o ON DELETE CASCADE do banco, remove endereços vinculados automaticamente*/
 delete($pdo, 'cadastrados', "id_login = $id");
 
 header('Location: clientes.php?deletado=1');

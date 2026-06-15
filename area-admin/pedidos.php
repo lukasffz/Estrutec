@@ -12,6 +12,7 @@ $pedidos = readAll($pdo, 'pedidos', "1 ORDER BY data_pedido DESC");
 <?php include 'partials/header.php'; ?>
 <div class="admin-main">
     <h2 class="admin-title">Pedidos</h2>
+    
     <div class="table-container">
         <table>
             <thead><tr><th>ID Pedido</th><th>Cliente</th><th>Data</th><th>Total</th><th>Status</th><th>Ação</th></tr></thead>

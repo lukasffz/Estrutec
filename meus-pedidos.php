@@ -2,7 +2,6 @@
 session_start();
 require_once 'config/crud.php';
 
- 
 if (!isset($_SESSION['id_login']) || $_SESSION['papel'] !== 'cliente') {
     header('Location: login.php');
     exit;
@@ -68,13 +67,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <span class="pedido-data"><?= date('d/m/Y \à\s H:i', strtotime($ped['data_pedido'])) ?></span>
                         <span class="badge-status <?= $statusClass ?>"><?= htmlspecialchars($ped['status']) ?></span>
                         <?php if (strtolower($ped['status']) === 'pendente'): ?>
-                        <span>
-                            <form method="POST" style="display:inline;">
-                                <input type="hidden" name="id_pedido" value="<?= $ped['id_pedido']; ?>">
-                                <button type="submit" name="lixeira" class="btn-acao btn-lixeira"><img src="./imagens/delete.png" width="19px"></button>
-                            </form>
-                        </span>
-<?php endif; ?>
+                            <span>
+                                <form method="POST" style="display:inline;">
+                                    <input type="hidden" name="id_pedido" value="<?= $ped['id_pedido']; ?>">
+                                    <button type="submit" name="lixeira" class="btn-acao btn-lixeira"><img src="./imagens/delete.png" width="19px"></button>
+                                </form>
+                            </span>
+                        <?php endif; ?>
                     </div>
                     <span class="pedido-total">Total: R$ <?= number_format($ped['total'], 2, ',', '.') ?></span>
                 </div>

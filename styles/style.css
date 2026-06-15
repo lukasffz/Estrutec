@@ -20,7 +20,6 @@ html {
 main {
     flex: 1;
 }
-
 /*header geral*/
 .site-header {
     background-color: #1F2C45;
@@ -48,7 +47,6 @@ main {
     gap: 2.5rem;
     list-style: none;
 }
-
 /*texto*/
 .TextoSobre .conteudoSobre {
     position: relative;
@@ -78,7 +76,6 @@ h1,h2,h3 {
     font-weight: 600;
     margin-bottom: 1rem;
 }
-
 /*hero*/
 .hero-estrutec {
     position: relative;
@@ -146,7 +143,6 @@ h1,h2,h3 {
     box-shadow: 0 0 25px #4A90D999;
     transform: translateY(-3px);
 }
-
 /*categorias*/
 .home-categorias {
     max-width: 1280px;
@@ -335,7 +331,6 @@ h1,h2,h3 {
 .btn-comprar:hover {
     background: #67a8eb;
 }
-
 /*boxes login, cadastro e contato*/
 .pagina-login {
     display: flex;
@@ -486,7 +481,6 @@ button[type="submit"],
 button[type="submit"]:hover {
     background-color: #6aa9f0;
 }
-
 .erro {
     color: #FF6B6B;
     text-align: center;

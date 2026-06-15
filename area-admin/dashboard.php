@@ -4,13 +4,11 @@ include '../config/auth.php';
 
 $papel_usuario = $_SESSION['papel'];
 
-// --- BUSCA O NOME DO USUÁRIO DIRETO DO BANCO DE DADOS ---
 $id_usuario_logado = $_SESSION['id_login'] ?? $_SESSION['usuario_id'] ?? $_SESSION['id'] ?? 0;
 $usuario_db = read($pdo, 'cadastrados', "id_login = $id_usuario_logado");
 $nome_usuario = $usuario_db['nome'] ?? $_SESSION['nome'] ?? 'Administrador';
-// --------------------------------------------------------
 
-// Dados do dashboard
+/*dados para o dashboard*/
 $criticos = count(readAll($pdo, 'produtos', "quantidade < 30"));
 $pendentes = count(readAll($pdo, 'pedidos', "status = 'Pendente'"));
 

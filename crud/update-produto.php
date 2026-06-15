@@ -29,7 +29,6 @@ else {
         }
     }
 }
-
 header('Location: ../area-admin/estoque.php');
 exit;
 ?>

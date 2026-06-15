@@ -40,7 +40,6 @@ foreach ($itens as $item) {
     $novaQtd = $produtoAtual['quantidade'] - $item['qtd'];
     update($pdo, 'produtos', ['quantidade' => $novaQtd], "id = {$item['id_produto']}");
 }
-
 unset($_SESSION['carrinho']);
 header('Location: ../meus-pedidos.php?msg=sucesso');
 exit;

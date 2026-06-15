@@ -12,6 +12,5 @@ create($pdo, 'cadastrados', [
     'cpf' => $_POST['cpf'],
     'papel' => $_POST['papel']
 ]);
-
 header('Location: ../area-admin/funcionarios.php');
 exit;

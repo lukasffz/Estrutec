@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Atualiza online=0 ANTES de qualquer outra operação
 if (isset($_SESSION['id_login'])) {
     require_once 'config/crud.php';
     $id = (int) $_SESSION['id_login'];

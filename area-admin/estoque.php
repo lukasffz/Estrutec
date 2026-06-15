@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } elseif ($acao === 'remove' && $produto['quantidade'] > 0) {
             update($pdo, 'produtos', ['quantidade' => $produto['quantidade'] - 1], "id = $id");
         } 
-        // Alterna o status de 1 para 0 ou de 0 para 1 (Liga/Desliga)
+        /*nome ficou lixeira pra nao precisar mexer no style e outras paginas*/
         elseif (isset($_POST['lixeira'])) {
             $novoStatus = $produto['status'] == 1 ? 0 : 1;
             update($pdo, 'produtos', ['status' => $novoStatus], "id = $id");

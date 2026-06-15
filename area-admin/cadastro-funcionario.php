@@ -2,6 +2,7 @@
 $requer_gerente = true;
 include '../config/auth.php';
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>

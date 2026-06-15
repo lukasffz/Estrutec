@@ -1,11 +1,8 @@
 <?php
 require_once 'config/crud.php';
-// Busca categorias únicas do banco
 $categorias = readAll($pdo, 'produtos', '1 GROUP BY categoria ORDER BY categoria');
 
-// LÓGICA DO WHATSAPP ADICIONADA AQUI
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // INSIRA SEU NÚMERO AQUI (Apenas números: Código do país + DDD + Telefone)
     $numeroWhats = "5511999999999"; 
 
     $nome = strip_tags(trim($_POST['nome']));
@@ -54,7 +51,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="home-grid">
                 <?php foreach ($categorias as $cat): ?>
                     <?php 
-                        // Capitaliza o nome da categoria (ex: "ferragens estruturais" => "Ferragens Estruturais")
                         $categoriaNome = ucwords($cat['categoria']);
                     ?>
                     <div class="home-card" onclick="window.location.href='produtos.php?categoria=<?php echo urlencode($cat['categoria']); ?>'">

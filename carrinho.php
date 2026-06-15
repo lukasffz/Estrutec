@@ -6,16 +6,14 @@ if (!isset($_SESSION['id_login']) || $_SESSION['papel'] !== 'cliente') {
     header('Location: login.php');
     exit;
 }
- 
-// Incrementar quantidade (+1 via link GET)
+/*Incrementar quantidade (+1 via link GET)*/
 if (isset($_GET['inc'])) {
     $id = (int)$_GET['inc'];
     $_SESSION['carrinho'][$id] = ($_SESSION['carrinho'][$id] ?? 0) + 1;
     header('Location: carrinho.php');
     exit;
 }
- 
-// Decrementar quantidade (-1 via link GET, remove se chegar a 0)
+/*Decrementar quantidade (-1 via link GET, remove se chegar a 0)*/
 if (isset($_GET['dec'])) {
     $id = (int)$_GET['dec'];
     if (isset($_SESSION['carrinho'][$id])) {
@@ -27,24 +25,21 @@ if (isset($_GET['dec'])) {
     header('Location: carrinho.php');
     exit;
 }
- 
-// Adicionar ao carrinho (vindo de produtos.php)
+/*Adicionar ao carrinho (vindo de produtos.php)*/
 if (isset($_GET['add'])) {
     $id = (int)$_GET['add'];
     $_SESSION['carrinho'][$id] = ($_SESSION['carrinho'][$id] ?? 0) + 1;
     header('Location: carrinho.php');
     exit;
 }
- 
-// Remover item inteiro
+/*Remover item inteiro*/
 if (isset($_GET['remove'])) {
     $id = (int)$_GET['remove'];
     unset($_SESSION['carrinho'][$id]);
     header('Location: carrinho.php');
     exit;
 }
- 
-// Atualizar quantidades via POST (digitação direta no input)
+/*Atualizar quantidades via POST (digitação direta no input)*/
 if (isset($_POST['atualizar'])) {
     foreach ($_POST['qtd'] as $id => $qtd) {
         if ($qtd <= 0) unset($_SESSION['carrinho'][$id]);
@@ -82,7 +77,6 @@ if (!empty($_SESSION['carrinho'])) {
     <title>Carrinho - Estrutec</title>
     <link rel="stylesheet" href="styles/style.css">
 
-    <!-- ADICIONA AQUI -->
     <script>
         function confirmarPedido(total) {
             return confirm(
@@ -92,7 +86,6 @@ if (!empty($_SESSION['carrinho'])) {
             );
         }
     </script>
-
 </head>
 
 </head>
@@ -109,8 +102,6 @@ if (!empty($_SESSION['carrinho'])) {
             </div>
         <?php else: ?>
             <div class="carrinho-layout">
- 
-                <!-- Tabela de itens -->
                 <div class="carrinho-tabela-wrap">
                     <table>
                         <thead>
@@ -133,7 +124,6 @@ if (!empty($_SESSION['carrinho'])) {
                                 </td>
                                 <td>R$ <?= number_format($item['preco'], 2, ',', '.') ?></td>
                                 <td>
-                                    <!-- Botões +/- são links GET — sem JS -->
                                     <div class="qty-ctrl">
                                         <a href="carrinho.php?dec=<?= $item['id'] ?>" class="qty-btn" title="Diminuir">−</a>
                                         <span class="qty-valor"><?= $item['qtd'] ?></span>
@@ -153,8 +143,7 @@ if (!empty($_SESSION['carrinho'])) {
                         </tbody>
                     </table>
                 </div>
- 
-                <!-- Resumo / checkout -->
+
                 <div class="resumo-box">
                     <h2>Resumo do pedido</h2>
                     <div class="resumo-linha">
@@ -170,7 +159,6 @@ if (!empty($_SESSION['carrinho'])) {
                         <span>R$ <?= number_format($totalGeral, 2, ',', '.') ?></span>
                     </div>
  
-                    <!-- Finalizar: link direto para o script PHP -->
                     <a href="crud/finalizar-pedido.php" 
                         class="btn-finalizar"
                         onclick="return confirmarPedido('<?= number_format($totalGeral, 2, ',', '.') ?>')">

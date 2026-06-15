@@ -40,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Criar</button>
             <?php if (isset($erro)) echo "<p class='erro'>$erro</p>"; ?>
         </form>
+        <p style="text-align:center; margin-top:1rem;">Já tem conta? <a href="login.php" style="color:#16B2D4;">Entrar</a></p>
     </div>
         <?php include './partials/footer.php'; ?>
 </body>

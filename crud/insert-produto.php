@@ -23,6 +23,5 @@ create($pdo, 'produtos', [
     'preco' => str_replace(',', '.', $_POST['preco']),
     'imagem' => $imagem
 ]);
-
 header('Location: ../area-admin/estoque.php');
 exit;

@@ -1,9 +1,7 @@
 <?php
 require_once 'config/crud.php';
 
-// LÓGICA DO WHATSAPP ADICIONADA AQUI
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // INSIRA SEU NÚMERO AQUI (Apenas números: Código do país + DDD + Telefone)
     $numeroWhats = "5511999999999"; 
 
     $nome = strip_tags(trim($_POST['nome']));

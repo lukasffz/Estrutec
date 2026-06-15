@@ -2,6 +2,7 @@
     <div class="logo">
         <a href="../logout-index.php"><img src="../imagens/logoEstrutec.png" alt="Estrutec"></a>
     </div>
+    
     <nav>
         <ul>
             <li><a href="dashboard.php">Dashboard</a></li>

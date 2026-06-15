@@ -8,6 +8,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <a href="index.php" class="logo">
             <img src="imagens/logoEstrutec.png" alt="Estrutec">
         </a>
+        
         <nav class="nav-principal">
             <ul>
                 <li><a href="index.php">Home</a></li>

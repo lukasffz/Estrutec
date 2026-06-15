@@ -43,7 +43,7 @@ $todasCategorias = readAll($pdo, 'produtos', 'status = 1 GROUP BY categoria ORDE
                 </a>
             <?php endforeach; ?>
         </div>
-
+        
         <?php if (count($produtos) > 0): ?>
             <div class="produtos-grid">
                 <?php foreach ($produtos as $p): ?>

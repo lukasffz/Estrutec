@@ -13,7 +13,7 @@ try {
     die("Erro de conexão: " . $e->getMessage());
 }
 
-// CREATE
+/*CREATE*/
 function create($pdo, $table, array $data) {
     $columns = implode(', ', array_keys($data));
     $placeholders = implode(', ', array_fill(0, count($data), '?'));
@@ -23,7 +23,7 @@ function create($pdo, $table, array $data) {
     return $pdo->lastInsertId();
 }
 
-// READ ALL
+/*READ ALL*/
 function readAll($pdo, $table, $where = null) {
     $sql = "SELECT * FROM $table";
     if ($where) {
@@ -33,14 +33,14 @@ function readAll($pdo, $table, $where = null) {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-// READ ONE
+/*READ ONE*/
 function read($pdo, $table, $where) {
     $sql = "SELECT * FROM $table WHERE $where";
     $stmt = $pdo->query($sql);
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-// READ CATEGORIA
+/*READ CATEGORIA*/
 function readCategoria($pdo, $table, $where = null) {
     $sql = "SELECT categoria FROM $table";
     if ($where) {
@@ -50,7 +50,7 @@ function readCategoria($pdo, $table, $where = null) {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-// UPDATE
+/*UPDATE*/
 function update($pdo, $table, array $data, $where) {
     $set = [];
     foreach ($data as $column => $value) {
@@ -63,7 +63,7 @@ function update($pdo, $table, array $data, $where) {
     return $stmt->rowCount();
 }
 
-// DELETE
+/*DELETE*/
 function delete($pdo, $table, $where) {
     $sql = "DELETE FROM $table WHERE $where";
     $stmt = $pdo->prepare($sql);

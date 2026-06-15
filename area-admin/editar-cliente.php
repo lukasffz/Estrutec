@@ -1,5 +1,4 @@
 <?php
-// area-admin/editar-cliente.php
 $requer_gerente = true;
 include '../config/auth.php';
 require_once '../config/crud.php';

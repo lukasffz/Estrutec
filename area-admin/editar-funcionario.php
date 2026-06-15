@@ -1,10 +1,9 @@
 <?php
-// area-admin/editar-funcionario.php
 $requer_gerente = true;
 include '../config/auth.php';
 require_once '../config/crud.php';
 
-// --- Valida o ID recebido ---
+/*Valida o ID recebido*/
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT)
    ?? filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
 
@@ -20,7 +19,7 @@ if (!$funcionario) {
     exit;
 }
 
-// --- Processa o formulário ---
+/*Processa o formulário*/
 $erros  = [];
 $sucesso = false;
 
@@ -33,12 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $papel    = $_POST['papel']         ?? '';
     $ativo    = isset($_POST['ativo']) ? 1 : 0;
 
-    // Validações básicas
     if ($nome === '')                         $erros[] = 'Nome é obrigatório.';
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $erros[] = 'E-mail inválido.';
     if (!in_array($papel, ['funcionario', 'gerente'])) $erros[] = 'Papel inválido.';
 
-    // Garante e-mail único (exceto o próprio funcionário)
     $emailExiste = read($pdo, 'cadastrados', "email = '$email' AND id_login != $id");
     if ($emailExiste) $erros[] = 'Este e-mail já está em uso por outro usuário.';
 
@@ -52,7 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'ativo'    => $ativo,
         ];
 
-        // Atualiza a senha apenas se preenchida
         $nova_senha = trim($_POST['nova_senha'] ?? '');
         if ($nova_senha !== '') {
             if (strlen($nova_senha) < 6) {
@@ -69,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    // Repopula com os dados enviados para mostrar os erros
+    /*Repopula com os dados enviados para mostrar os erros*/
     $funcionario = array_merge($funcionario, $_POST);
 }
 ?>

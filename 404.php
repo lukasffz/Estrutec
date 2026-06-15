@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<!--Página base 404 para caso de futuras atualizações-->
 <head>
     <title>Página não encontrada - Estrutec</title>
     <link rel="stylesheet" href="styles/style.css">

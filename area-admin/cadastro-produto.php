@@ -8,6 +8,7 @@
 </head>
 <body>
 <?php include 'partials/header.php'; ?>
+
 <div class="admin-main">
     <div class="form-admin">
         <h2>Cadastro de Produto</h2>
