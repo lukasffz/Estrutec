@@ -1,0 +1,96 @@
+USE estrutec;
+
+-- TABELAS
+CREATE TABLE cadastrados (
+    id_login      INT PRIMARY KEY AUTO_INCREMENT,
+    nome          VARCHAR(150) NOT NULL,
+    email         VARCHAR(100) UNIQUE NOT NULL,
+    senha         VARCHAR(255) NOT NULL,
+    telefone      VARCHAR(20) NOT NULL,
+    cpf           VARCHAR(20) NOT NULL,
+    papel         VARCHAR(20) DEFAULT 'cliente',
+    ativo         TINYINT(1) DEFAULT 1,
+    online        TINYINT(1) DEFAULT 0
+);
+CREATE TABLE enderecos (
+    id_endereco INT PRIMARY KEY AUTO_INCREMENT,
+    id_login    INT NOT NULL,
+    rua         VARCHAR(150) NOT NULL,
+    numero      VARCHAR(20) NOT NULL,
+    bairro      VARCHAR(100) NOT NULL,
+    cidade      VARCHAR(100) NOT NULL,
+    cep         VARCHAR(20) NOT NULL,
+    FOREIGN KEY (id_login) REFERENCES cadastrados(id_login) ON DELETE CASCADE
+);
+CREATE TABLE produtos (
+    id          INT PRIMARY KEY AUTO_INCREMENT,
+    item        VARCHAR(100) NOT NULL,
+    categoria   VARCHAR(100) NOT NULL,
+    descricao   VARCHAR(300),
+    quantidade  INT UNSIGNED DEFAULT 0, -- Alterado para UNSIGNED (Apenas positivos e zero)
+    imagem      VARCHAR(200),
+    preco       DECIMAL(8,2) NOT NULL,
+    status      TINYINT(1) DEFAULT 1    -- ADICIONADO AQUI: 1 para Ativo, 0 para Inativo
+);
+CREATE TABLE pedidos (
+    id_pedido   INT PRIMARY KEY AUTO_INCREMENT,
+    id_login    INT NOT NULL,
+    data_pedido DATETIME DEFAULT CURRENT_TIMESTAMP,
+    status      VARCHAR(50) DEFAULT 'Pendente',
+    total       DECIMAL(8,2) NOT NULL,
+    FOREIGN KEY (id_login) REFERENCES cadastrados(id_login)
+);
+CREATE TABLE itens_pedido (
+    id_item        INT PRIMARY KEY AUTO_INCREMENT,
+    id_pedido      INT NOT NULL,
+    id_produto     INT NOT NULL,
+    qtd_comprada   INT NOT NULL,
+    preco_unitario DECIMAL(8,2) NOT NULL,
+    FOREIGN KEY (id_pedido)  REFERENCES pedidos(id_pedido) ON DELETE CASCADE,
+    FOREIGN KEY (id_produto) REFERENCES produtos(id)
+);
+
+-- DADOS
+-- Usuários (senha: '12345')
+INSERT INTO cadastrados (nome, email, senha, telefone, cpf, papel, ativo, online) VALUES
+('Admin Estrutec', 'admin@estrutec.com', '$2y$10$vAc0ve8nob4x.GRYdxBqe.p08jmMy37RRcN0jYv/VtsyCGrujmiVK', '11999999999', '123.456.789-10', 'gerente', 1, 0),
+('João Silva',     'joao@email.com',     '$2y$10$vAc0ve8nob4x.GRYdxBqe.p08jmMy37RRcN0jYv/VtsyCGrujmiVK', '11988888888', '111.111.111-11', 'cliente', 1, 0),
+('Maria Oliveira', 'maria@email.com',    '$2y$10$vAc0ve8nob4x.GRYdxBqe.p08jmMy37RRcN0jYv/VtsyCGrujmiVK', '11977777777', '987.654.321-00', 'cliente', 1, 0);
+-- Produtos
+INSERT INTO produtos (item, categoria, descricao, quantidade, preco, imagem) VALUES
+('Estaca pré-moldada 30cm',    'Pré-moldados', 'Estaca de concreto para fundações profundas',      150, 89.90,  'imagens_projeto/colunapilar-pre-moldado-casa-pre-fabricada.jpg'),
+('Sapata metálica',            'Aço',          'Sapata estrutural em aço galvanizado',              80, 245.00, 'imagens_projeto/sapata metalica.jpg'),
+('Tubo de forma (sonotubo) 20cm','Pré-moldados','Para moldagem de pilares in loco',                300, 12.50,  'imagens_projeto/sonotubo.jpg'),
+('Vergalhão CA-50 10mm',       'Aço',          'Aço para concreto armado',                         500, 45.90,  'imagens_projeto/vergalhao.jpg'),
+('Malha eletrossoldada 5x5mm', 'Aço',          'Tela para lajes e pisos',                          200, 98.00,  'imagens_projeto/malha eletrossoldada.jpg'),
+('Estribo 5/16',               'Aço',          'Distribuição de esforços em vigas',               1000,  2.59,  'imagens_projeto/estribo5 16.jpg'),
+('Arame recozido 18',          'Aço',          'Arame para amarração',                             800, 12.00,  'imagens_projeto/arame_recozido.jpg'),
+('Cimento Portland CP II',     'Cimenticios',  'Cimento estrutural CP II-E-32',                    200, 33.90,  'imagens_projeto/cimento.jpg'),
+('Brita nº 1',                 'Agregados',    'Brita granulometria 1 para concreto',              180,  8.46,  'imagens_projeto/brita_01.jpg'),
+('Areia lavada média',         'Agregados',    'Areia para concreto',                              250, 95.00,  'imagens_projeto/areia_media.jpg'),
+('Concreto usinado FCK 25MPa', 'Cimenticios',  'Concreto dosado em central',                        60, 520.00, 'imagens_projeto/concreto_usinado.jpg'),
+('Viga pré-moldada 6m',        'Pré-moldados', 'Viga de concreto protendido',                       40, 750.00, 'imagens_projeto/vigas_6m.jpg'),
+('Pilar pré-fabricado',        'Pré-moldados', 'Pilar para estrutura industrial',                   35, 620.00, 'imagens_projeto/pilar_pre_fabricado.jpg'),
+('Laje treliçada',             'Pré-moldados', 'Sistema de laje com treliças metálicas',            90, 110.00, 'imagens_projeto/laje_trelica.jpg'),
+('Bloco estrutural de concreto','Cimenticios', 'Bloco para alvenaria estrutural NBR 15961',        500,  4.50,  'imagens_projeto/Bloco-de-Concreto.jpg');
+-- Pedidos
+INSERT INTO pedidos (id_login, data_pedido, status, total) VALUES
+(2, '2025-04-01 10:30:00', 'Concluído',    134.25),
+(2, '2025-04-10 14:20:00', 'Pendente',      67.80),
+(3, '2025-04-05 09:15:00', 'Em separação', 245.00);
+-- Itens
+INSERT INTO itens_pedido (id_pedido, id_produto, qtd_comprada, preco_unitario) VALUES
+(1, 1,  1, 89.90),
+(1, 8,  1, 33.90),
+(1, 10, 1,  8.46),
+(2, 6, 10,  2.59),
+(2, 13, 1, 620.00),
+(3, 4,  5, 45.90);
+
+-- CONSULTAS
+/*
+SELECT * FROM cadastrados;
+SELECT * FROM produtos;
+SELECT * FROM pedidos;
+SELECT * FROM itens_pedido;
+*/

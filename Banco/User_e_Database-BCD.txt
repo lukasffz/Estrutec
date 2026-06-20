@@ -1,0 +1,16 @@
+-- USUÁRIO
+DROP USER IF EXISTS 'dev'@'%';
+
+CREATE USER 'dev'@'%' IDENTIFIED BY '123';
+
+GRANT ALL PRIVILEGES ON estrutec.* TO 'dev'@'%';
+
+FLUSH PRIVILEGES;
+
+show databases;
+
+-- BANCO DE DADOS
+DROP DATABASE IF EXISTS estrutec;
+CREATE DATABASE estrutec;
+
+USE estrutec;
